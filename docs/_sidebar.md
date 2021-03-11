@@ -9,6 +9,15 @@
   - [this](js/this.md "this")
   - [深浅拷贝](js/深浅拷贝.md "深浅拷贝")
 
+- 设计模式
+
+  - [单例模式](designMode/单例模式.md "单例模式")
+  - [发布订阅模式](designMode/发布订阅模式.md "发布订阅模式")
+  - [代理模式](designMode/代理模式.md "代理模式")
+  - [中介者模式](designMode/中介者模式.md "中介者模式")
+  - [装饰者模式](designMode/装饰者模式.md "装饰者模式")
+  - [策略模式](designMode/策略模式.md "策略模式")
+
 - LeetCode
 
   - [Hash](LeetCode/Hash.md)
