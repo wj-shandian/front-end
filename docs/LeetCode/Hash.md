@@ -178,3 +178,51 @@ var singleNumber = function (nums) {
 题目还要增加需求，O(1)的空间复杂度可以做到吗？看了解题用到了位运算 有时间再研究
 
 做过一遍
+
+## 第一个只出现一次的字符（简单题目）
+
+在字符串 s 中找出第一个只出现一次的字符。如果没有，返回一个单空格。 s 只包含小写字母。  
+s = "abaccdeff"
+返回 "b"
+
+s = ""
+返回 " "
+
+题目意思很清晰明了，不需要分析
+
+开始做的时候以为很简单，首先把字符串转成数组，存 hash 表，重复的删除，最后返回 hash 表的第一位即可，后面提交发现不通过，没有考虑到一些边界问题，字符串里面没有符合的字符串，以及如果出现了奇数位的字符串就会出现问题了，于是看了官方题解。
+
+很是巧妙，
+第一次遍历 重复的 保存 value -1 不重复的 存索引值
+第二次遍历判断 是否为 -1 以及 目标值索引是否大于当前索引值
+
+看代码
+
+```js
+/**
+ * @param {string} s
+ * @return {character}
+ */
+var firstUniqChar = function (s) {
+  if (s === "") return " ";
+  var nums = s.split(""); // 转化成数组
+  var map = new Map(); // 创建hash结构
+  for (var i = 0; i < nums.length; i++) {
+    // 第一次循环遍历
+    if (map.has(nums[i])) {
+      map.set(nums[i], -1);
+    } else {
+      map.set(nums[i], i);
+    }
+  }
+  let first = nums.length;
+  for (let value of map.values()) {
+    if (value !== -1 && first > value) {
+      first = value; // 当遇到第一个符合的字符串 first 被赋值了当前的索引，后面再有符合的值 first > value 判断就不会通过 ，所以这个就是第一个符合条件的
+    }
+  }
+  return first === nums.length ? " " : nums[first];
+};
+```
+
+次数 （1）
