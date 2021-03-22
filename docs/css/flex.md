@@ -6,7 +6,7 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 
 <pre>flex-direction: column | column-reverse | row | row-reverse </pre>
 
-![image](https://upload-images.jianshu.io/upload_images/13691851-2b57a9ba4aa50435.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![avatar](img/01.png);
 
 对应图中的两个方向和四个起点，默认值 是 row，比较常用
 
@@ -34,7 +34,7 @@ nowrap 不换行，wrap 换行 第一行上面 wrap-reverse 换行 第一行在�
 
 <pre>justify-content: flex-start | flex-end | center | space-between | space-around;</pre>
 
-![image](https://upload-images.jianshu.io/upload_images/13691851-455d37d390374c9d.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![avatar](img/02.png);
 
 常用 center space-around
 
@@ -44,7 +44,7 @@ nowrap 不换行，wrap 换行 第一行上面 wrap-reverse 换行 第一行在�
 
 常用 center
 
-![image](https://upload-images.jianshu.io/upload_images/13691851-a7cbe6278b0ef52d.png!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![avatar](img/03.png);
 
 ## align-content (控制多行 垂直方向对齐方式 只有一行不起作用)
 
@@ -72,7 +72,7 @@ flex-grow 属性定义项目的放大比例，默认为 0，即如果存在剩�
   flex-grow: <number>; /* default 0 */
 }</pre>
 
-![1614239860(1).jpg](https://upload-images.jianshu.io/upload_images/13691851-0ec33e921d7edb12.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![avatar](img/04.png);
 
 如果不设置 或者设置为 0 那么 剩余空间不会被瓜分，
 
