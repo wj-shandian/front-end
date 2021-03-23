@@ -226,3 +226,59 @@ var firstUniqChar = function (s) {
 ```
 
 次数 （1）
+
+## 快乐数
+
+编写一个算法来判断一个数 n 是不是快乐数。
+
+「快乐数」定义为：
+
+对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。
+然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。
+如果 可以变为   1，那么这个数就是快乐数。
+如果 n 是快乐数就返回 true ；不是，则返回 false 。
+
+示例 1：
+
+输入：19
+输出：true
+解释：
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+
+示例 2：
+
+输入：n = 2
+输出：false
+
+题意很简单
+思路：用 hash 表记录每一次的计算结果值 如果遇到有重复的结果，则返回 false
+
+```js
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+function next(value) {
+  let total = 0;
+  while (value > 0) {
+    let d = value % 10;
+    value = parseInt(value / 10); // 这里每次都要取整，不然计算会有小数，时间超时
+    total += d * d;
+  }
+  return total;
+}
+var isHappy = function (n) {
+  var map = new Map();
+  while (n !== 1 && !map.has(n)) {
+    // 注意这里的判断不要写错 写错无法进入循环
+    map.set(n);
+    n = next(n);
+  }
+  return n === 1;
+};
+```
+
+次数 （1）
