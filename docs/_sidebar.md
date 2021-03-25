@@ -26,7 +26,11 @@
 
 - Vue
 
-  -[mvvm](vue/mvvm.md "mvvm")
+  - [mvvm](vue/mvvm.md "mvvm")
+
+- HTTP
+
+  - [缓存](vue/缓存.md "缓存")
 
 - 设计模式
 
