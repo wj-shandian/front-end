@@ -38,6 +38,7 @@
 - LeetCode
 
   - [Hash](LeetCode/Hash.md)
+  - [链表](LeetCode/链表.md)
 
 - 关于我
   - [联系方式](contact/contact.md "联系方式")
