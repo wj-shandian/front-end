@@ -1,3 +1,48 @@
+## 一道睡不着的面试题
+
+这是再掘金看到的一道面试题目，开始看了半天没有看明白，最后终于看明白了
+
+这段代码输出什么
+
+```js
+Promise.resolve()
+  .then(() => {
+    console.log(0);
+    return Promise.resolve(4);
+  })
+  .then((res) => {
+    console.log(res);
+  });
+
+Promise.resolve()
+  .then(() => {
+    console.log(1);
+  })
+  .then(() => {
+    console.log(2);
+  })
+  .then(() => {
+    console.log(3);
+  })
+  .then(() => {
+    console.log(5);
+  })
+  .then(() => {
+    console.log(6);
+  });
+console.log(-1);
+```
+
+- 开始 第一个 promise.resolve().the()微任务 进入队列
+- 然后第二个 promise.resolve().the()微任务 进入队列
+- 打印 -1 这个时候已经没有同步代码了，则需要执行微任务
+- 执行微任务，打印第一个 0 (在 then return 会返回一个 promise,所以 `return Promise.resolve(4);`返回会再包裹一层 promise)
+- 执行第二个微任务 打印 1，此时微任务都执行结束
+- 接着执行第一个 Promise.resolve 第二个 then，也是一个微任务 压入队列,接着执行官 第二个 Promise.resolve 第二个 then 也压入队列，
+- 执行现在队列中的第一个微任务，此时会遇到 promise 形成一个新的微任务队列 ，第二个微任务打印 2，这个时候队列为空
+
+- 第一个 Promise.resolve 已经没有 then 但是第二个 Promise.resolve 还有 then,于是第三个 then 进入微任务队列
+
 ## Promise 检测图片
 
 检测图片是否加载成功，成功就正常显示，失败就展示默认图片
