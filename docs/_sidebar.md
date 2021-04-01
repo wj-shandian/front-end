@@ -29,6 +29,7 @@
 - Vue
 
   - [mvvm](vue/mvvm.md "mvvm")
+  - [vue 响应式原理](vue/vue响应式原理.md "vue响应式原理")
 
 -Webpack
 
