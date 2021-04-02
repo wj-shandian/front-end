@@ -282,3 +282,58 @@ var isHappy = function (n) {
 ```
 
 次数 （1）
+
+## 两个数组的交集 II (简单)
+
+给定两个数组，编写一个函数来计算它们的交集。
+
+示例 1：
+
+输入：nums1 = [1,2,2,1], nums2 = [2,2]
+输出：[2,2]
+
+刚看这个题目，我以为我理解题意了，后来看了题解发现我理解错了。
+
+开始我理解是要连续的交集，受到了示例的误导，导致没有思路。
+
+这题是只要是交集就行，没有顺序问题
+
+最容易想到的可能就是 hash（虽然我一开始也没想到）
+
+两次遍历，第一把所有值存到 hash 表中，遇到相同的数+1
+
+第二次遍历，查找 hash 表，存在并且值不为 0 的 就放到交集数组中
+
+最后返回结果
+
+这题还有一道排序双指针的解法，后续在双指针中在研究
+
+```js
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersect = function (nums1, nums2) {
+  let n1 = nums1.length,
+    n2 = nums2.length;
+  if (n1 === 0 || n2 === 0) return [];
+  let i = 0,
+    j = 0,
+    num = new Map(),
+    result = [];
+  for (; i < n1; i++) {
+    let nums = num.get(nums1[i]) ? num.get(nums1[i]) + 1 : 1;
+    num.set(nums1[i], nums);
+  }
+  for (; j < n2; j++) {
+    if (num.has(nums2[j]) && num.get(nums2[j]) !== 0) {
+      result.push(nums2[j]);
+      num.set(nums2[j], num.get(nums2[j]) - 1);
+    }
+  }
+  return result;
+};
+```
+
+次数（1）
