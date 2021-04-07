@@ -31,6 +31,7 @@
   - [mvvm](vue/mvvm.md "mvvm")
   - [vue 响应式原理](vue/vue响应式原理.md "vue响应式原理")
   - [$nextTick 实现原理](vue/$nextTick实现原理.md "$nextTick实现原理")
+  - [vuex 的基本使用以及常用方法](vue/vuex的基本使用以及常用方法.md "vuex的基本使用以及常用方法")
 
 - Webpack
 
