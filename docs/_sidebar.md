@@ -57,6 +57,7 @@
   - [Hash](LeetCode/Hash.md)
   - [链表](LeetCode/链表.md)
   - [双指针](LeetCode/双指针.md)
+  - [动态规划](LeetCode/动态规划.md)
 
 - 关于我
   - [联系方式](contact/contact.md "联系方式")
