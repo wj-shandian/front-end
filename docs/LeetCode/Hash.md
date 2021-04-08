@@ -337,3 +337,46 @@ var intersect = function (nums1, nums2) {
 ```
 
 次数（1）
+
+## 有效的字母异位词（简单）
+
+给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+示例 1:
+
+输入: s = "anagram", t = "nagaram"
+输出: true
+
+差点没看懂题意，简单的理解就事两个字符串的字母是一样的，只是可能顺序是不一样的，（很容易想到 hash 表统计字母个数，两次遍历）
+
+```js
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function (s, t) {
+  if (s.length !== t.length) return false;
+  let map = new Map();
+  let i = 0,
+    j = 0,
+    n = s.length,
+    m = t.length;
+  for (; i < n; i++) {
+    if (map.has(s[i])) {
+      map.set(s[i], map.get(s[i]) + 1);
+    } else {
+      map.set(s[i], 1);
+    }
+  }
+  for (; j < m; j++) {
+    if (map.has(t[j]) && map.get(t[j]) > 0) {
+      map.set(t[j], map.get(t[j]) - 1);
+    } else {
+      return false;
+    }
+  }
+  return true;
+};
+```
+
+次数（1）
