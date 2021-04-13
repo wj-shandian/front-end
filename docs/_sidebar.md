@@ -32,6 +32,8 @@
   - [vue 响应式原理](vue/vue响应式原理.md "vue响应式原理")
   - [$nextTick 实现原理](vue/$nextTick实现原理.md "$nextTick实现原理")
   - [vuex 的基本使用以及常用方法](vue/vuex的基本使用以及常用方法.md "vuex的基本使用以及常用方法")
+  - [diff 算法](vue/diff算法.md "diff算法")
+  - [keep-alive 实现原理](vue/keep-alive实现原理.md "keep-alive实现原理")
 
 - Webpack
 
