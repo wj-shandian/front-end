@@ -59,11 +59,12 @@
 
 - LeetCode
 
-  - [Hash](LeetCode/Hash.md)
-  - [链表](LeetCode/链表.md)
-  - [双指针](LeetCode/双指针.md)
-  - [动态规划](LeetCode/动态规划.md)
-  - [数学题解](LeetCode/数学题解.md)
+  - [Hash](LeetCode/Hash.md "Hash")
+  - [链表](LeetCode/链表.md "链表")
+  - [双指针](LeetCode/双指针.md "双指针")
+  - [动态规划](LeetCode/动态规划.md "动态规划")
+  - [数学题解](LeetCode/数学题解.md "数学题解")
+  - [栈](LeetCode/栈.md "栈")
 
 - 关于我
   - [联系方式](contact/contact.md "联系方式")
