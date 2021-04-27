@@ -65,6 +65,15 @@ baz();
 
 可以看出，调用位置应该是当前正在执行的函数的前一个调用中
 
+## 事件绑定
+
+不论是 DOM0 还是 DOM2 事件绑定，给元素 e 的某个事件行为绑定方法，当前事件触发方法执行，方法种的 this 是当前元素 e 本身
+
+特殊情况:
+
+- IE6-8 基于 attachEvent 实现 DOM2 事件绑定，事件触发方法执行，方法中的 this 不是元素本身，大部分情况是 window
+- 如果使用 call/apply/bind 强制改变 this 指向，我们以改变的为主
+
 ## 全局上下文 this
 
 很好理解，全局上下文的 this 实际上就是 window
@@ -78,6 +87,16 @@ console.log(a + b + c); // 6
 ```
 
 ## 函数上下文 this
+
+- 普通函数  
+  普通函数执行，看函数前面是否有点。有点 ，点前面是谁 this 就是谁，没有点 this 就是 window (严格模式是 undefined)
+
+  fn() -> this： window/undefined  
+  obj.fn() -> this:obj  
+  xxx._proto_.fn() -> this:xxx._proto_
+
+  自执行函数：this 一般是 window/undefined
+  回调函数中的 this 一般也是 window/undefined
 
 在函数内部，this 的值取决于函数被调用的方式。
 
