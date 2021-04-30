@@ -233,4 +233,148 @@ b.say(); // 打印 333
 ps: 有些内容来源网络，忘记
 
 最后结果： 222 111 222 333
-看到这里，你明白 this 了吗 不明白联系我
+看到这里，你明白 this 了吗，不明白做点题目吧
+
+## this 相关面试题
+
+### 第一题
+
+```js
+let obj = {
+    fn:(function(){
+        return function(){
+            console.log(this)
+        }
+    })()
+}
+obj.fn();
+let fn = obj.fn;
+fn();
+```
+
+### 第二题
+
+```js
+var fullName = 'language';
+var obj = {
+    fullName: 'javascript',
+    prop: {
+        getFullName: function () {
+            return this.fullName;
+        }
+    }
+};
+console.log(obj.prop.getFullName());
+var test = obj.prop.getFullName;
+console.log(test());
+```
+
+### 第三题
+
+```js
+var name = 'window'; 
+var Tom = {
+    name: "Tom",
+    show: function () {
+        console.log(this.name);
+    },
+    wait: function () {
+        var fun = this.show;
+        fun();
+    }
+};
+Tom.wait(); 
+```
+
+### 第四题
+
+```js
+window.val = 1
+var json = {
+    val: 10,
+    dbl: function () {
+        this.val *= 2;
+    }
+}
+json.dbl();
+var dbl = json.dbl;
+dbl();
+json.dbl.call(window);
+alert(window.val + json.val);
+```
+
+### 第五题
+
+```js
+(function () {
+    var val = 1; 
+    var json = {
+        val: 10,
+        dbl: function () {
+            val *= 2; 
+        }
+    };
+    json.dbl();
+    alert(json.val + val); 
+})();
+```
+
+
+
+## 答案
+
+```js
+// 第一题
+obj.fn(); // this指向的是obj ,所以输出 {fn：function(){}}
+let fn = obj.fn;
+fn();// 此时的fn 属于全局，相当于把函数赋值给全局变量，所以 this 是window
+
+// 第二题
+console.log(obj.prop.getFullName());
+//=>this:obj.prop  =>obj.prop.fullName  =>undefined
+var test = obj.prop.getFullName;
+console.log(test());
+//=>this:window =>window.fullName =>'language' */
+
+
+// 第三题
+var Tom = {
+    name: "Tom",
+    show: function () {
+        // this->window
+        console.log(this.name); //=>'window'
+    },
+    wait: function () {
+        // this->Tom
+        var fun = this.show;
+        fun();
+        // 此时fn执行没有其他的this 绑定，
+       // fn() === fn.call(window)
+    }
+};
+
+// 第四题
+json.dbl();
+//->this:json  ->json.val=json.val*2  ->json.val=20
+var dbl = json.dbl;
+dbl();
+//->this:window ->window.val=window.val*2 ->window.val=2
+json.dbl.call(window);
+//->this:window ->window.val=window.val*2 ->window.val=4
+alert(window.val + json.val); //=>"24"
+
+// 第五题
+(function () {
+    var val = 1; //->2
+    var json = {
+        val: 10,
+        dbl: function () {
+            // this->json
+            val *= 2; //val=val*2  此处的val是变量  json.val是对象的属性
+        }
+    };
+    json.dbl();
+    alert(json.val + val); //=>"12"
+})();
+```
+
