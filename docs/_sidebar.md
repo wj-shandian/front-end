@@ -7,7 +7,9 @@
   - [预编译](js/预编译.md "预编译")
   - [作用域](js/作用域.md "作用域")
   - [继承](js/继承.md "继承")
-  - [原型](js/原型.md "原型")
+  - [面向对象之概念](js/面向对象之概念.md "面向对象之概念")
+  - [面向对象之原型](js/面向对象之原型.md "面向对象之原型")
+  - [面向对象之(new-call-apply-bind)](<js/面向对象之(new-call-apply-bind).md> "面向对象之(new-call-apply-bind)")
   - [事件循环](js/事件循环.md "事件循环")
   - [闭包](js/闭包.md "闭包")
   - [this](js/this.md "this")
@@ -22,7 +24,6 @@
   - [let-const-var](js/let-const-var.md "let-const-var的区别")
   - [promise 用法以及相关概念](js/promise用法以及相关概念.md "promise用法以及相关概念")
   - [手写 Promise](js/手写Promise.md "手写Promise")
-  - [面向对象](js/面向对象.md "面向对象")
 
 - CSS
 
