@@ -415,6 +415,36 @@ Function.prototype.bind1 = function (context) {
 };
 ```
 
+另一个版本参考
+
+```js
+/*
+ * 重写内置BIND：柯理化思想「预处理思想」
+ */
+Function.prototype.bind = function bind(context, ...outerArgs) {
+    // this->fn context->obj outerArgs->[10,20]
+    let self = this;
+    return function (...innerArgs) {
+        // innerArgs->[ev]
+        self.call(context, ...outerArgs.concat(innerArgs));
+    };
+};
+
+function fn(x, y, ev) {
+    console.log(this, x, y, ev);
+}
+let obj = {
+    name: 'zhufeng'
+};
+
+/* document.body.onclick = function (ev) {
+    fn.call(obj, 10, 20, ev);
+}; */
+document.body.onclick = fn.bind(obj, 10, 20);
+```
+
+
+
 参考文献：
 
 - https://muyiy.cn/blog/3/3.3.html#call-%E5%92%8C-apply
