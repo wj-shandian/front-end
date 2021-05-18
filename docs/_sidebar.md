@@ -41,6 +41,11 @@
   - [diff 算法](vue/diff算法.md "diff算法")
   - [keep-alive 实现原理](vue/keep-alive实现原理.md "keep-alive实现原理")
 
+- Vue 面试相关
+
+  - [v-if 和 v-for 优先级问题](vue-interview/v-if和v-for优先级问题.md "v-if和v-for优先级问题")
+  - [组件 data 为什么是一个函数](vue-interview/组件data为什么是一个函数.md "组件data为什么是一个函数")
+
 - React
 
   - [基础知识](vue/基础知识.md "基础知识")
