@@ -46,6 +46,11 @@
   - [v-if 和 v-for 优先级问题](vue-interview/v-if和v-for优先级问题.md "v-if和v-for优先级问题")
   - [组件 data 为什么是一个函数](vue-interview/组件data为什么是一个函数.md "组件data为什么是一个函数")
 
+- TS
+
+  - [简单基础类型](TS/简单基础类型.md "简单基础类型")
+  - [复杂基础类型](TS/复杂基础类型.md "复杂基础类型")
+
 - React
 
   - [基础知识](vue/基础知识.md "基础知识")
