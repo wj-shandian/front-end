@@ -45,6 +45,8 @@
 
   - [v-if 和 v-for 优先级问题](vue-interview/v-if和v-for优先级问题.md "v-if和v-for优先级问题")
   - [组件 data 为什么是一个函数](vue-interview/组件data为什么是一个函数.md "组件data为什么是一个函数")
+  - [vue 优化](vue-interview/vue优化.md "vue优化")
+  - [vue 组件通信](vue-interview/vue组件通信.md "vue组件通信")
 
 - TS
 
