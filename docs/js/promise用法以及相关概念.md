@@ -120,7 +120,62 @@ promise.then(function(value) {
 });
 ```
 
-有一点需要注意，如果是 new Promise 那么是立刻执行里面的代码 promise.then 才是微任务
+new Promise 的时候会立即执行 executor 函数 「同步」
+
+- resolve 执行：修改 promise 实例的状态 fulfilled/resolved，成功的结果就是传递的实参信息
+- reject 执行：修改 promise 实例的状态 rejected，失败的原因也是传递的实参信息
+
+执行 then 方法只是把 onfulfilled/onrejected 函数保存起来 「同步」，但是此时还没有执行，当 promise 状态变为成功或者失败的时候，才会去触发执行对应的函数 「异步->微任务」
+
+有一点需要注意，如果是 new Promise 那么是立刻执行里面的代码 resolve 和 reject 才是微任务
+
+## async/await
+
+async:修饰函数，最后默认让函数返回一个 promise 实例（函数执行报错，实例状态是失败，结果是报错原因；否则实例状态是成功，结果是 return 后面的值） ->一般都是配合 await 的「函数中使用 await，则必须基于 async 修饰才可以」
+
+await 后面的代码都是异步微任务
+
+await “promise 实例”：如果设置的不是 promise 实例
+
+- 正常的值 await 10 -> await Promise.resolve(10)
+- 函数执行 await xxx() -> 首先立即执行 xxx 函数，接收它的返回值 -> await 返回值
+
+本身是异步微任务：把当前上下文中 await 下面要执行的代码整体存储到异步的微任务中，当 await 后面的 promise 实例状态为成功后，再去执行下面的代码(也就是那个异步的微任务)
+
+```js
+function computed() {
+  console.log(1);
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(2);
+    }, 1000);
+  });
+}
+console.log(3);
+async function fn() {
+  console.log(4);
+  let result = await computed();
+  console.log(result);
+  console.log(5);
+}
+fn();
+console.log(6);
+```
+
+async/await 的错误需要设置 try/catch 来捕获
+
+```js
+async function f() {
+  try {
+    await new Promise(function (resolve, reject) {
+      throw new Error("出错了");
+    });
+  } catch (e) {}
+  return await "hello world";
+}
+```
+
+如果 await 执行的代码一直死循环或者占用主线程 那么后面的代码将无法执行，一直等待 await 执行完才可以执行后面的代码
 
 ## Promise.prototype.finally()
 
