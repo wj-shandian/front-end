@@ -25,6 +25,7 @@
   - [let-const-var](js/let-const-var.md "let-const-var的区别")
   - [promise 用法以及相关概念](js/promise用法以及相关概念.md "promise用法以及相关概念")
   - [手写 Promise](js/手写Promise.md "手写Promise")
+  - [Generator](js/Generator "Generator")
 
 - CSS
 
