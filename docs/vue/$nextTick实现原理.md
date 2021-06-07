@@ -19,3 +19,5 @@
 主要原理是利用宏任务微任务把要执行的方法压入任务队列，等待主进程执行完毕再执行任务队列
 
 next-tick.js 申明了 microTimerFunc 和 macroTimerFunc 2 个变量，它们分别对应的是 micro task 的函数和 macro task 的函数。对于 macro task 的实现，优先检测是否支持原生 setImmediate，这是一个高版本 IE 和 Edge 才支持的特性，不支持的话再去检测是否支持原生的 MessageChannel，如果也不支持的话就会降级为 setTimeout 0；而对于 micro task 的实现，则检测浏览器是否原生支持 Promise，不支持的话直接指向 macro task 的实现
+
+由于宏任务的耗费时间是大于微任务的，所以在浏览器支持的情况下优先使用微任务，如果不支持再使用宏任务
