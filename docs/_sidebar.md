@@ -49,6 +49,7 @@
   - [组件 data 为什么是一个函数](vue-interview/组件data为什么是一个函数.md "组件data为什么是一个函数")
   - [vue 优化](vue-interview/vue优化.md "vue优化")
   - [vue 组件通信](vue-interview/vue组件通信.md "vue组件通信")
+  - [watch 和 computed 的区别和使用场景](vue-interview/watch和computed的区别和使用场景.md "watch和computed的区别和使用场景")
 
 - TS
 
