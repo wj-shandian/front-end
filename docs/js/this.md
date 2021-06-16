@@ -190,7 +190,34 @@ console.log(person.name); // axuebin
 
 ## 箭头函数
 
-所有的箭头函数都没有 this,都是指向外层的当前函数所在的上下文的 this
+- 所有的箭头函数都没有 this,都是指向外层的当前函数所在的上下文的 this
+
+- 为什么箭头函数没有自己的 this,因为箭头函数中的 this 在编译的时候会被变量替代
+
+```js
+// 编译前书写的箭头函数
+let test = {
+  foo: "apple",
+  getFoo() {
+    return () => {
+      return this.foo;
+    };
+  },
+};
+
+// 编译后
+let test = {
+  foo: "apple",
+  getFoo() {
+    let _this = this;
+    return function () {
+      return _this.foo;
+    };
+  },
+};
+```
+
+- 为什么箭头函数内部可以使用 this,因为它会从自己的作用域链的上一层继承 this
 
 ## 题解分析
 
@@ -241,12 +268,12 @@ ps: 有些内容来源网络，忘记
 
 ```js
 let obj = {
-    fn:(function(){
-        return function(){
-            console.log(this)
-        }
-    })()
-}
+  fn: (function () {
+    return function () {
+      console.log(this);
+    };
+  })(),
+};
 obj.fn();
 let fn = obj.fn;
 fn();
@@ -255,14 +282,14 @@ fn();
 ### 第二题
 
 ```js
-var fullName = 'language';
+var fullName = "language";
 var obj = {
-    fullName: 'javascript',
-    prop: {
-        getFullName: function () {
-            return this.fullName;
-        }
-    }
+  fullName: "javascript",
+  prop: {
+    getFullName: function () {
+      return this.fullName;
+    },
+  },
 };
 console.log(obj.prop.getFullName());
 var test = obj.prop.getFullName;
@@ -272,30 +299,30 @@ console.log(test());
 ### 第三题
 
 ```js
-var name = 'window'; 
+var name = "window";
 var Tom = {
-    name: "Tom",
-    show: function () {
-        console.log(this.name);
-    },
-    wait: function () {
-        var fun = this.show;
-        fun();
-    }
+  name: "Tom",
+  show: function () {
+    console.log(this.name);
+  },
+  wait: function () {
+    var fun = this.show;
+    fun();
+  },
 };
-Tom.wait(); 
+Tom.wait();
 ```
 
 ### 第四题
 
 ```js
-window.val = 1
+window.val = 1;
 var json = {
-    val: 10,
-    dbl: function () {
-        this.val *= 2;
-    }
-}
+  val: 10,
+  dbl: function () {
+    this.val *= 2;
+  },
+};
 json.dbl();
 var dbl = json.dbl;
 dbl();
@@ -307,19 +334,17 @@ alert(window.val + json.val);
 
 ```js
 (function () {
-    var val = 1; 
-    var json = {
-        val: 10,
-        dbl: function () {
-            val *= 2; 
-        }
-    };
-    json.dbl();
-    alert(json.val + val); 
+  var val = 1;
+  var json = {
+    val: 10,
+    dbl: function () {
+      val *= 2;
+    },
+  };
+  json.dbl();
+  alert(json.val + val);
 })();
 ```
-
-
 
 ## 答案
 
@@ -327,7 +352,7 @@ alert(window.val + json.val);
 // 第一题
 obj.fn(); // this指向的是obj ,所以输出 {fn：function(){}}
 let fn = obj.fn;
-fn();// 此时的fn 属于全局，相当于把函数赋值给全局变量，所以 this 是window
+fn(); // 此时的fn 属于全局，相当于把函数赋值给全局变量，所以 this 是window
 
 // 第二题
 console.log(obj.prop.getFullName());
@@ -336,21 +361,20 @@ var test = obj.prop.getFullName;
 console.log(test());
 //=>this:window =>window.fullName =>'language' */
 
-
 // 第三题
 var Tom = {
-    name: "Tom",
-    show: function () {
-        // this->window
-        console.log(this.name); //=>'window'
-    },
-    wait: function () {
-        // this->Tom
-        var fun = this.show;
-        fun();
-        // 此时fn执行没有其他的this 绑定，
-       // fn() === fn.call(window)
-    }
+  name: "Tom",
+  show: function () {
+    // this->window
+    console.log(this.name); //=>'window'
+  },
+  wait: function () {
+    // this->Tom
+    var fun = this.show;
+    fun();
+    // 此时fn执行没有其他的this 绑定，
+    // fn() === fn.call(window)
+  },
 };
 
 // 第四题
@@ -365,16 +389,15 @@ alert(window.val + json.val); //=>"24"
 
 // 第五题
 (function () {
-    var val = 1; //->2
-    var json = {
-        val: 10,
-        dbl: function () {
-            // this->json
-            val *= 2; //val=val*2  此处的val是变量  json.val是对象的属性
-        }
-    };
-    json.dbl();
-    alert(json.val + val); //=>"12"
+  var val = 1; //->2
+  var json = {
+    val: 10,
+    dbl: function () {
+      // this->json
+      val *= 2; //val=val*2  此处的val是变量  json.val是对象的属性
+    },
+  };
+  json.dbl();
+  alert(json.val + val); //=>"12"
 })();
 ```
-
