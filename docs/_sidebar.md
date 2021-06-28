@@ -73,6 +73,7 @@
 
   - [关于微前端的理解与实战](tech-essays/关于微前端的理解与实战.md "关于微前端的理解与实战")
   - [node 如何调用 c++库](tech-essays/node如何调用c++库.md "node如何调用c++库")
+  - [electron 调用 node 文件的问题](tech-essays/electron调用node文件的问题.md "electron调用node文件的问题")
 
 - Canvas
 
