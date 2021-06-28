@@ -20,3 +20,7 @@
 viewModel:业务逻辑层，View 需要什么数据，ViewModel 要提供这个数据；View 有某些操作，ViewModel 就要响应这些操作，所以可以说它是 Model for View
 
 vm 作为 m 和 v 之间的桥梁解决了数据频繁更新，MVVM 在使用当中，利用双向绑定技术，使得 Model 变化时，ViewModel 会自动更新，而 ViewModel 变化时，View 也会自动变化
+
+## 总结
+
+![avatar](img/mvvm.png);

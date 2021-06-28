@@ -25,3 +25,37 @@ vue 响应式原理核心思想 发布订阅模式 + Object.defineProperty
   - 当调度中心（dep）通知订阅者（watcher）那么就会触发自身的更新方法，然后更新视图
 
 只是一些文字简单版本的理解,想要更深入的了解，可以看源码或者[vue.js 揭秘](https://ustbhuangyi.github.io/vue-analysis/v2/reactive/)
+
+![响应式原理简单流程图](img/004.png)
+
+```js
+Object.defineProperty(obj, key, {
+  enumerable: true,
+  configurable: true,
+  get: function reactiveGetter() {
+    const value = getter ? getter.call(obj) : val;
+    if (Dep.target) {
+      dep.depend(); // ** 收集依赖 ** /
+      if (childOb) {
+        childOb.dep.depend();
+        if (Array.isArray(value)) {
+          dependArray(value);
+        }
+      }
+    }
+    return value;
+  },
+  set: function reactiveSetter(newVal) {
+    const value = getter ? getter.call(obj) : val;
+    if (newVal === value || (newVal !== newVal && value !== value)) {
+      return;
+    }
+    if (process.env.NODE_ENV !== "production" && customSetter) {
+      customSetter();
+    }
+    val = newVal;
+    childOb = !shallow && observe(newVal);
+    dep.notify(); /**通知相关依赖进行更新**/
+  },
+});
+```
