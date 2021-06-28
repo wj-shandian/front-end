@@ -42,7 +42,9 @@
 
 bindings 主要时用来测试 打包后的代码
 node-addon-api 是对原生语法的封装 使编写更方便
+
 项目结构目录
+
 ![](img/node-gyp.jpg)
 
 - build 是打包后的文件夹
