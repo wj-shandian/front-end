@@ -89,6 +89,7 @@
   - [flutter 环境搭建](tech-essays/flutter环境搭建.md "flutter环境搭建")
   - [photoswipe 放大图片的使用](tech-essays/photoswipe放大图片的使用.md "photoswipe放大图片的使用")
   - [vue-cli 内存溢出问题](tech-essays/vue-cli内存溢出问题.md "vue-cli内存溢出问题")
+  - [你是否只会用 console.log()](<tech-essays/你是否只会用console.log().md> "你是否只会用console.log()")
 
 - Canvas
 
