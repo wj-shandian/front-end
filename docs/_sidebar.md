@@ -33,6 +33,8 @@
   - [flex](css/flex.md "flex")
   - [经典布局](css/经典布局.md "经典布局")
   - [伪类和伪元素的区别](css/伪类和伪元素的区别.md "伪类和伪元素的区别")
+  - [flex 布局两边自适应，超出实现](css/flex布局两边自适应，超出实现.md "flex 布局两边自适应，超出实现")
+  - [CSS 怎么保持弹窗的高度的自适应](css/CSS怎么保持弹窗的高度的自适应.md "CSS怎么保持弹窗的高度的自适应")
 
 - Vue
 
@@ -73,6 +75,7 @@
   - [webpack 之优化](webpack/webpack之优化.md "webpack之优化")
   - [webpack 之 loader](webpack/webpack之loader.md "webpack之loader")
   - [webpack 之 plugin](webpack/webpack之plugin.md "webpack之plugin")
+  - [webpack 多页热更新慢问题](webpack/webpack多页热更新慢问题.md "webpack多页热更新慢问题")
   - [import 被 webpack 编译成了什么](webpack/import被webpack编译成了什么.md "import被webpack编译成了什么")
 
 - 技术杂文
@@ -80,6 +83,12 @@
   - [关于微前端的理解与实战](tech-essays/关于微前端的理解与实战.md "关于微前端的理解与实战")
   - [node 如何调用 c++库](tech-essays/node如何调用c++库.md "node如何调用c++库")
   - [electron 调用 node 文件的问题](tech-essays/electron调用node文件的问题.md "electron调用node文件的问题")
+  - [搭建私有 npm 服务器](tech-essays/搭建私有npm服务器.md "搭建私有npm服务器")
+  - [图片 403 问题](tech-essays/图片403问题.md "图片403问题")
+  - [echarts 控制 Y 轴分割线](tech-essays/echarts控制Y轴分割线.md "echarts控制Y轴分割线")
+  - [flutter 环境搭建](tech-essays/flutter环境搭建.md "flutter环境搭建")
+  - [photoswipe 放大图片的使用](tech-essays/photoswipe放大图片的使用.md "photoswipe放大图片的使用")
+  - [vue-cli 内存溢出问题](tech-essays/vue-cli内存溢出问题.md "vue-cli内存溢出问题")
 
 - Canvas
 
