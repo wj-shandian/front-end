@@ -380,3 +380,37 @@ var isAnagram = function (s, t) {
 ```
 
 次数（1）
+
+## 剑指 Offer 56 - II. 数组中数字出现的次数 II(中等)
+
+在一个数组 nums 中除一个数字只出现一次之外，其他数字都出现了三次。请找出那个只出现一次的数字。
+
+输入：nums = [3,4,3,3]
+输出：4
+
+这题有多种解法 如果用 hash 解法 只能算简单题目，并且 不是最优解 位运算的解法相对来说比 hash 解法较优
+
+hash 解法
+
+```js
+function singleNumber(nums: number[]): number {
+  let map = new Map();
+  for (var i = 0; i < nums.length; i++) {
+    if (map.has(nums[i])) {
+      map.set(nums[i], -1);
+    } else {
+      map.set(nums[i], 1);
+    }
+  }
+  for (let [key, value] of map) {
+    if (value === 1) return key;
+  }
+  return null;
+}
+```
+
+思路很简单，创建一个 hash 遍历输入 如果有两个以上的数字存入 并且设置值为 -1 一次的设置值为 1
+
+再次循环 获取值为 1 的值
+
+一次
