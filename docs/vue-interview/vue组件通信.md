@@ -1,9 +1,10 @@
 - props
-- vuex
+- Vuex
 - provide/inject
-- $attrs/$linsteners
+- $attrs/$listeners
 - $parent/$children
 - $emit/$on
+- event bus
 
 常用的就这几种
 
