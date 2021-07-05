@@ -44,6 +44,7 @@
   - [vuex 的基本使用以及常用方法](vue/vuex的基本使用以及常用方法.md "vuex的基本使用以及常用方法")
   - [diff 算法](vue/diff算法.md "diff算法")
   - [keep-alive 实现原理](vue/keep-alive实现原理.md "keep-alive实现原理")
+  - [vue 长列表渲染](vue/vue长列表渲染.md "vue长列表渲染")
 
 - Vue 面试相关
 
