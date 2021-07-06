@@ -52,6 +52,7 @@
   - [vue 为什么采用异步渲染](vue-interview/vue为什么采用异步渲染.md "vue为什么采用异步渲染")
   - [watch 中的 deep 是如何实现的](vue-interview/watch中的deep是如何实现的.md "watch中的deep是如何实现的")
   - [组件渲染和更新过程](vue-interview/组件渲染和更新过程.md "组件渲染和更新过程")
+  - [vue 中事件绑定的原理](vue-interview/vue中事件绑定的原理.md "vue中事件绑定的原理")
 - TS
   - [简单基础类型](TS/简单基础类型.md "简单基础类型")
   - [复杂基础类型](TS/复杂基础类型.md "复杂基础类型")
