@@ -50,6 +50,7 @@
   - [watch 和 computed 的区别和使用场景](vue-interview/watch和computed的区别和使用场景.md "watch和computed的区别和使用场景")
   - [vue 是如何检测数组变化的](vue-interview/vue是如何检测数组变化的.md "vue是如何检测数组变化的")
   - [vue 为什么采用异步渲染](vue-interview/vue为什么采用异步渲染.md "vue为什么采用异步渲染")
+  - [watch 中的 deep 是如何实现的](vue-interview/watch中的deep是如何实现的.md "watch中的deep是如何实现的")
 - TS
   - [简单基础类型](TS/简单基础类型.md "简单基础类型")
   - [复杂基础类型](TS/复杂基础类型.md "复杂基础类型")
