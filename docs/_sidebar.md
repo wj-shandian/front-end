@@ -42,6 +42,7 @@
   - [vue 长列表渲染](vue/vue长列表渲染.md "vue长列表渲染")
 - Vue 面试相关
   - [vue 生命周期的理解](vue-interview/vue生命周期的理解.md "vue生命周期的理解")
+  - [vue 父子组件生命周期的调用顺序](vue-interview/vue父子组件生命周期的调用顺序.md "vue父子组件生命周期的调用顺序")
   - [v-if 和 v-for 优先级问题](vue-interview/v-if和v-for优先级问题.md "v-if和v-for优先级问题")
   - [组件 data 为什么是一个函数](vue-interview/组件data为什么是一个函数.md "组件data为什么是一个函数")
   - [vue 优化](vue-interview/vue优化.md "vue优化")
