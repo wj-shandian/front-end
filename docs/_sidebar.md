@@ -57,6 +57,7 @@
   - [vue 中事件绑定的原理](vue-interview/vue中事件绑定的原理.md "vue中事件绑定的原理")
   - [什么是作用域插槽](vue-interview/什么是作用域插槽.md "什么是作用域插槽")
   - [vue-router 导航钩子](vue-interview/vue-router导航钩子.md "vue-router导航钩子")
+  - [vue 如何写一个指令](vue-interview/vue如何写一个指令.md "vue如何写一个指令")
 - TS
   - [简单基础类型](TS/简单基础类型.md "简单基础类型")
   - [复杂基础类型](TS/复杂基础类型.md "复杂基础类型")
