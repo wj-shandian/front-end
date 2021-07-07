@@ -24,7 +24,8 @@
   - [let-const-var](js/let-const-var.md "let-const-var的区别")
   - [promise 用法以及相关概念](js/promise用法以及相关概念.md "promise用法以及相关概念")
   - [手写 Promise](js/手写Promise.md "手写Promise")
-  - [Generator](js/Generator "Generator")
+  - [Generator](js/Generator.md "Generator")
+  - [模块化发展历程](js/模块化发展历程.md "模块化发展历程")
 - CSS
   - [BFC](css/BFC.md "BFC")
   - [flex](css/flex.md "flex")
