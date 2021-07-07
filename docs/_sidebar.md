@@ -47,6 +47,7 @@
   - [v-if 和 v-for 优先级问题](vue-interview/v-if和v-for优先级问题.md "v-if和v-for优先级问题")
   - [组件 data 为什么是一个函数](vue-interview/组件data为什么是一个函数.md "组件data为什么是一个函数")
   - [vue 优化](vue-interview/vue优化.md "vue优化")
+  - [key 的作用和原理](vue-interview/key的作用和原理.md "key的作用和原理")
   - [vue 组件通信](vue-interview/vue组件通信.md "vue组件通信")
   - [watch 和 computed 的区别和使用场景](vue-interview/watch和computed的区别和使用场景.md "watch和computed的区别和使用场景")
   - [vue 是如何检测数组变化的](vue-interview/vue是如何检测数组变化的.md "vue是如何检测数组变化的")
