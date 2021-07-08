@@ -99,10 +99,36 @@ patchVnode (oldVnode, vnode) {
 
 ## 比较重要的 updateChildren
 
-![diff](img/diff_02.png)
+- 先同级比较 在比较子节点
+- 先判断一方有儿子一方没有儿子的情况
+- 比较都有儿子的情况
+- 递归比较子节点
+
+![diff](img/diff01.jpg)
+![diff](img/diff02.jpg)
+
+双指针从头开始比较，如果开始节点 tag 和 key 相同，那么双指针向后移动，一直到最后一个节点，发现 E，直接把 E 节点移动到旧的虚拟 DOM 上
+
+![diff](img/diff03.jpg)
+
+如果开始头节点不相同，那么双指针会移动到后面，开始比较，一直比较发现不同的节点，移动 E 节点
+
+![diff](img/diff04.jpg)
+
+如果首尾节点比较都不相同，就是不属于以上两种情况，那么就会脚叉比交，收节点和尾节点比较，如果相同，那么会把末尾节点移动到开始节点，然后再循环比较，可以看图理解
+
+![diff](img/diff05.jpg)
+
+这一种刚好是和上一个相反的情况
+
+![diff](img/diff06.jpg)
+
+最后一种也是最复杂的一种，交叉比较 然后相同节点移动，最后比较完毕 保留相同节点，删除无用节点
+
+<!-- ![diff](img/diff_02.png)
 ![diff](img/diff_03.png)
 ![diff](img/diff_04.png)
-![diff](img/diff_05.png)
+![diff](img/diff_05.png) -->
 
 ```js
 function updateChildren(
@@ -213,6 +239,8 @@ function updateChildren(
   }
 }
 ```
+
+diff 算法采用的是双指针的算法
 
 参考文章：
 
