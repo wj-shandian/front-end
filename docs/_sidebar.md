@@ -111,5 +111,6 @@
   - [动态规划](LeetCode/动态规划.md "动态规划")
   - [数学题解](LeetCode/数学题解.md "数学题解")
   - [栈](LeetCode/栈.md "栈")
+  - [数组](LeetCode/数组.md "数组")
 - 关于我
   - [联系方式](contact/contact.md "联系方式")
