@@ -87,6 +87,7 @@
   - [vue-cli 内存溢出问题](tech-essays/vue-cli内存溢出问题.md "vue-cli内存溢出问题")
   - [你是否只会用 console.log()](<tech-essays/你是否只会用console.log().md> "你是否只会用console.log()")
   - [混合加密的流程](tech-essays/混合加密的流程.md "混合加密的流程")
+  - [持续集成 CICD](tech-essays/持续集成CICD.md "持续集成CICD")
 - Canvas
   - [基本概念](canvas/基本概念.md "基本概念")
 - HTTP
