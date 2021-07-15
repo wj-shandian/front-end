@@ -36,6 +36,7 @@
 - Vue
   - [mvvm](vue/mvvm.md "mvvm")
   - [vue 响应式原理](vue/vue响应式原理.md "vue响应式原理")
+  - [router 实现原理](vue/router实现原理.md "router实现原理")
   - [$nextTick 实现原理](vue/$nextTick实现原理.md "$nextTick实现原理")
   - [vuex 的基本使用以及常用方法](vue/vuex的基本使用以及常用方法.md "vuex的基本使用以及常用方法")
   - [diff 算法](vue/diff算法.md "diff算法")
@@ -88,6 +89,7 @@
   - [你是否只会用 console.log()](<tech-essays/你是否只会用console.log().md> "你是否只会用console.log()")
   - [混合加密的流程](tech-essays/混合加密的流程.md "混合加密的流程")
   - [持续集成 CICD](tech-essays/持续集成CICD.md "持续集成CICD")
+  - [移动端如何做适配](tech-essays/移动端如何做适配.md "移动端如何做适配")
 - Canvas
   - [基本概念](canvas/基本概念.md "基本概念")
 - HTTP

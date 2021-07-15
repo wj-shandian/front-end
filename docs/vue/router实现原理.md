@@ -66,6 +66,7 @@ class VueRouter {
   constructor(options) {
     this.mode = options.mode || "hash";
     this.routes = options.routes || []; //你传递的这个路由是一个数组表
+    // 改变数据结构类型 方便使用
     this.routesMap = this.createMap(this.routes);
     this.history = new HistoryRoute();
     this.init();
@@ -111,11 +112,13 @@ VueRouter.install = function (v) {
         //如果是子组件
         this._root = this.$parent && this.$parent._root;
       }
+      // router 是一个全局的对象，里面包含了所有路由关键属性和对象信息
       Object.defineProperty(this, "$router", {
         get() {
           return this._root._router;
         },
       });
+      // router 是一个跳转路由的对象，一个局部对象，里面会包含当前路由一些信息  例如 name path params query等
       Object.defineProperty(this, "$route", {
         get() {
           return this._root._router.history.current;
