@@ -72,6 +72,7 @@
   - [react-state](React/react-state.md "react-state")
   - [react-lifeCycle](React/react-lifeCycle.md "react生命周期的理解")
 - ReactNative
+  - [reactNative 启动失败可能的问题](ReactNative/reactNative启动失败可能的问题.md "reactNative启动失败可能的问题")
   - [unstated-next 的用法](ReactNative/unstated-next的用法.md "unstated-next的用法")
 - Webpack
   - [webpack 的工作原理概括](webpack/webpack的工作原理概括.md "webpack的工作原理概括")
