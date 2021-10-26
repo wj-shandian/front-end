@@ -78,6 +78,7 @@
 - ReactNative
   - [reactNative 启动失败可能的问题](ReactNative/reactNative启动失败可能的问题.md "reactNative启动失败可能的问题")
   - [unstated-next 的用法](ReactNative/unstated-next的用法.md "unstated-next的用法")
+  - [reactNative 安卓打包](Reactnative/reactNative安卓打包.md "reactNative安卓打包")
 - Webpack
   - [webpack 的工作原理概括](webpack/webpack的工作原理概括.md "webpack的工作原理概括")
   - [webpack 之基础](webpack/webpack之基础.md "webpack之基础")
