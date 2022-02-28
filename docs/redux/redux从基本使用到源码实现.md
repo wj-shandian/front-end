@@ -148,11 +148,13 @@ function getState() {
 - subscribe
 
 ```jsx
-currentListeners.push(listener);
-return () => {
-  const index = currentListeners.indexOf(listener);
-  currentListeners.splice(index, 1);
-};
+function subscribe(listener) {
+  currentListeners.push(listener);
+  return () => {
+    const index = currentListeners.indexOf(listener);
+    currentListeners.splice(index, 1);
+  };
+}
 ```
 
 触发 action
