@@ -1,4 +1,4 @@
-vue 中事件绑定分为原生事件绑定和组件事件绑定
+<!-- vue 中事件绑定分为原生事件绑定和组件事件绑定
 
 - 原生事件绑定 采用的是 addEventListener 实现的
 - 组件事件绑定是采用$on 方法
@@ -75,4 +75,6 @@ export function updateComponentListeners(
 function add(event, fn) {
   target.$on(event, fn);
 }
-```
+``` -->
+
+内容有待调整
