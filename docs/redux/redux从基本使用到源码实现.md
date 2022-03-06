@@ -334,7 +334,7 @@ function logger({ dispatch, getState }) {
 
 我们用流程图来看下中间件的流程
 
-![](img/redux-middleware.png)
+![](img/redux-middleware.jpg)
 
 ## combineReducers
 
