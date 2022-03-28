@@ -63,3 +63,37 @@ type ParamsString = paramType<string>
 首选我们声明了一个泛型`T` 如果我们传入`T`可以分配给 `(params:infer U) => void` 那么我们返回 `U`
 
 `infer`相当于声明一个类型变量，这个类型的变量 取决于传入的 `T` ,`U`只能值 `?`的左侧 也就是 true 分支使用
+
+看个例子
+
+```TS
+type Flattered<T> = T extends (infer V)[] ? V : T // (infer U)[] 等同于 Array<infer U>
+
+type D = Flattered<Array<number>>
+// type D = number
+type E = Flattered<Array<Array<number>>>
+// type E = number[]
+```
+
+我们改造一下 `Flattered`
+
+```TS
+type Flattered<T> = T extends (infer V)[] ? Flattered<V> : T
+
+// 这里相当于递归重复调用
+
+type E = Flattered<Array<Array<number>>>
+// type E = number
+
+```
+
+```Ts
+
+type Flattered<T> = T extends Array<infer V> ? Flattered<V> : T
+
+function flattered<T extends Array<any>>(arr:T):Array<Flattered<T>>{
+    return (new Array<Flattered<T>>()).concat(...arr.map(x=>Array.isArray(x)?flattered(x):x))
+}
+
+flattered([1,2,3,[4,5,[6,7]]])
+```
