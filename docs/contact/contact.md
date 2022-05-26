@@ -16,4 +16,6 @@ qq:1466557627
 
 微信：15755081286
 
-原文地址 gitee: https://gitee.com/yufengJie/font-end （别问我为什么，访问快。。。。）
+原文地址 gitee: https://gitee.com/yufengJie/font-end （别问我为什么，访问快。。。。）各种原因 现已更新到 github
+
+github 地址 https://github.com/wj-shandian/front-end.git github 访问链接：https://wj-shandian.github.io/front-end/#/

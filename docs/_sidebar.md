@@ -78,6 +78,8 @@
   - [react 渲染优化](React/react渲染优化.md "react渲染优化")
   - [react-hoc](React/react-hoc.md "react-hoc")
   - [reactHook 理解文字篇](React/reactHook理解文字篇.md "reactHook理解文字篇")
+- React 源码系列
+  - [说明](react-source-code/READM.md "READM")
 - ReactNative
   - [reactNative 启动失败可能的问题](ReactNative/reactNative启动失败可能的问题.md "reactNative启动失败可能的问题")
   - [unstated-next 的用法](ReactNative/unstated-next的用法.md "unstated-next的用法")
