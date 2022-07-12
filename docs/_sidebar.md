@@ -141,6 +141,7 @@
   - [栈](LeetCode/栈.md "栈")
   - [数组](LeetCode/数组.md "数组")
   - [树](LeetCode/树.md "树")
+  - [二叉搜索树](LeetCode/二叉搜索树.md "二叉搜索树")
   - [每日一题](LeetCode/每日一题.md "每日一题")
 - 关于我
   - [联系方式](contact/contact.md "联系方式")
