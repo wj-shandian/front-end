@@ -142,6 +142,7 @@
   - [数组](LeetCode/数组.md "数组")
   - [树](LeetCode/树.md "树")
   - [二叉搜索树](LeetCode/二叉搜索树.md "二叉搜索树")
+  - [排序](LeetCode/排序.md "排序")
   - [每日一题](LeetCode/每日一题.md "每日一题")
 - 关于我
   - [联系方式](contact/contact.md "联系方式")
