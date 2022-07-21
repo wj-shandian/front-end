@@ -177,5 +177,75 @@ test("the shopping list has milk on it", () => {
 - callback
 
 ```js
+test("the data is peanut butter", (done) => {
+  function callback(error, data) {
+    if (error) {
+      done(error);
+      return;
+    }
+    try {
+      expect(data).toBe("peanut butter");
+      done();
+    } catch (error) {
+      done(error);
+    }
+  }
 
+  fetchData(callback);
+});
+```
+
+`done()`表示的是测试完成 如果不执行 `done()` 则代表测试失败
+
+- promise
+
+```js
+test("the data is peanut butter", () => {
+  return fetchData().then((data) => {
+    expect(data).toBe("peanut butter");
+  });
+});
+```
+
+- async/await
+
+```js
+test("the data is peanut butter", async () => {
+  const data = await fetchData();
+  expect(data).toBe("peanut butter");
+});
+
+test("the fetch fails with an error", async () => {
+  expect.assertions(1);
+  try {
+    await fetchData();
+  } catch (e) {
+    expect(e).toMatch("error");
+  }
+});
+```
+
+ps:jest 还支持一些钩子函数 和 mock 函数 具体的用法比较简单 可以参考官网，接下来我门来看看 TDD 是什么
+
+## TDD （Test-Driven-Development）
+
+- 测试驱动开发模型 需求分析->拆分模型->编写测试用例->编写代码通过测试用例->重构->发布
+- 重构时可以减少 bug 提高代码质量 提高可维护性
+- TDD 的核心就是先写测试用例再写代码
+
+### 环境准备
+
+- 初始化项目 `npx create-react-app jest-message --template typescript`
+- 安装单元测试的依赖 `npm install --save-dev enzyme @types/enzyme enzyme-adapter-react-18 @types/enzyme-adapter-react-18 ` -18 主要是看你项目安装的 react 是什么版本
+
+## BDD (Behavior Driven Development)
+
+- 行为驱动开发是一种敏捷软件开发的技术，它鼓励软件项目中的开发者 QA 和非技术人员之间的协作
+
+```
+                         测试人员编写测试定义 ->
+                              ↑               ↓
+用户行为 -> 细化用户行为 -> 系统行为/模块行为 -> 验证代码和行为  -> 上线
+                              ↓               ↑
+                              开发人员编码    ->
 ```
