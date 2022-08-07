@@ -123,6 +123,7 @@
 - HTTP
 
   - [HTTP 常见面试题目](HTTP/HTTP常见面试题目.md "HTTP常见面试题目")
+  - [HTTP1.1/优化方案](HTTP/HTTP1.1优化方案.md "HTTP1.1/优化方案")
   - [TCP](HTTP/TCP.md "TCP")
   - [缓存](HTTP/缓存.md "缓存")
   - [跨域](HTTP/跨域.md "跨域")
