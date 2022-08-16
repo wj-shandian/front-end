@@ -106,4 +106,30 @@ MSS 时，则就先会进行分片，当然由它形成的 IP 包的⻓度也就
 
 如果一个 TCP 分片丢失后，进行重发时也是以 MSS 为单位，而不用 􏰀 传所有的分片
 
-## 什么事 SYN 攻击 如何避免 SYN 攻击
+## 什么是 SYN 攻击 如何避免 SYN 攻击
+
+假设攻击者短时间伪造不同的 IP 地址的 SYN 报文，服务端每接收一个 SYN 报文就会进入 SYN_RCVD 状态，但是服务器发送出去的 ACK + SYN 报文 无法得到未知的 IP 主机的 ACK 回答，时间一久就会占满服务器的 SYN 接收队列 使得服务器不能为正常的 客户端服务
+
+避免攻击 一
+
+通过修改 Linux 内核参数，控制队列大小和当队列满时应该怎么做
+
+- 当网卡接收数据包的速度大于内核处理的速度时，会有一个队列保存这些数据包。控制该队列的最大值如下参数 `net.core.netdev_max_backlog`
+- SYN_RCVD 状态连接的最大个数: `net.ipv4.tcp_max_syn_backlog`
+- 超出处理能时，对新的 SYN 直接回报 RST，丢弃连接: `net.ipv4.tcp_abort_on_overflow`
+
+避免攻击 二
+
+看看 Linux 内核的 SYN 队列和 Accept 队列如何工作
+
+![](TCP/tcp_syn.png)
+
+如果 SYN 被攻击，那么 SYN 队列就会被占满
+
+![](TCP/tcp_10.png)
+
+tcp_syncookies 的方式可以应对 SYN 攻击的方法: `net.ipv4.tcp_syncookies = 1`
+
+如果 SYN 队列占满 则启动 cookie
+
+![](TCP/tcp_11.png)
