@@ -51,7 +51,9 @@ TCP 协议的通信双方 都必须维护一个 序列号 序列号是可靠传�
 
 当客户端发送携带「初始序列号」的 SYN 报文的时 候，需要服务端回一个 ACK 应答报文，表示客户端的 SYN 报文已被服务端成功接收，那当服务端发送「初始序 列号」给客户端的时候，依然也要得到客户端的应答回应，这样一来一回，才能确保双方的初始序列号能被可靠的 同步。
 
-![](TCP/tcp_09.png)
+<div align="center">
+<img src="TCP/tcp_09.png" width="60%">
+</div>
 
 四次握手其实也能够可靠的同步双方的初始化序号，但由于第二步和第三步可以优化成一步，所以就成了「三次握 手」。
 而两次握手只保证了一方的初始序列号能被对方成功接收，没办法保证双方的初始序列号都能被确认接收。
@@ -122,14 +124,20 @@ MSS 时，则就先会进行分片，当然由它形成的 IP 包的⻓度也就
 
 看看 Linux 内核的 SYN 队列和 Accept 队列如何工作
 
-![](TCP/tcp_syn.png)
+<div align="center">
+<img src="TCP/tcp_syn.png" width="60%">
+</div>
 
 如果 SYN 被攻击，那么 SYN 队列就会被占满
 
-![](TCP/tcp_10.png)
+<div align="center">
+<img src="TCP/tcp_10.png" width="60%">
+</div>
 
 tcp_syncookies 的方式可以应对 SYN 攻击的方法: `net.ipv4.tcp_syncookies = 1`
 
 如果 SYN 队列占满 则启动 cookie
 
-![](TCP/tcp_11.png)
+<div align="center">
+<img src="TCP/tcp_11.png" width="60%">
+</div>
