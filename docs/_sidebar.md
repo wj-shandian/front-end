@@ -134,6 +134,11 @@
   - [TCP 基本认识](HTTP/TCP基本认识.md "TCP基本认识")
   - [TCP 建立连接](HTTP/TCP建立连接.md "TCP建立连接")
   - [TCP 断开连接](HTTP/TCP断开连接.md "TCP断开连接")
+  - [TCP 重传机制](HTTP/TCP重传机制.md "TCP重传机制")
+  - [TCP 滑动窗口](HTTP/TCP滑动窗口.md "TCP滑动窗口")
+  - [TCP 流量控制](HTTP/TCP流量控制.md "TCP流量控制")
+  - [TCP 拥塞控制](HTTP/TCP拥塞控制.md "TCP拥塞控制")
+
   - [TCP 重传、滑动窗口、流量控制、拥塞控制](HTTP/TCP重传、滑动窗口、流量控制、拥塞控制.md "TCP重传、滑动窗口、流量控制、拥塞控制")
 
 - 单元测试
