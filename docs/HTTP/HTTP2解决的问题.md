@@ -42,7 +42,9 @@ HPACK 包含三个组成部分
 
 HTTP/2 为高频出现在头部的字符串和字段建立了一张静态表，它是写入到 HTTP/2 框架里的，不会变化的，静态 表里共有 61 组，如下图展示的部分内容
 
-![](HTTP/http_08.png)
+<div align="center">
+ <img src="HTTP/http_08.png" width="60%">
+</div>
 
 Index 表示索引 key Header value 表示对应索引的 value Header name 表示字段的名称
 有些 Index 没有对应的 Header value 是因为 这些 value 不是固定的值，而是变化的 这些 value 都会经过 Huffman 编码后发出
@@ -77,7 +79,9 @@ HTTP/2 二进制帧的结构图：
 
 帧长度后面的一个字节表示帧的类型 HTTP/2 一共有 10 种类型 分为数据帧和控制帧
 
-![](HTTP/http_09.png)
+<div align="center">
+ <img src="HTTP/http_09.png" width="60%">
+</div>
 
 帧类型后面的是一个字节的标志位，用于携带简单的控制信息 比如
 

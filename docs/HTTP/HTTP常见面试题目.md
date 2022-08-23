@@ -245,7 +245,9 @@ HTTP2 的问题是，多个 HTTP 请求是在一个 TCP 连接 里，下层的 T
 
 所以 HTTP/3 把 HTTP 下层的 TCP 协议改成了 UDP
 
-![](HTTP/http_05.png)
+<div align="center">
+ <img src="HTTP/http_05.png" width="60%">
+</div>
 
 UDP 是不管顺序的 也不管丢包，所以不会出现队头阻塞和丢包重传的问题
 
