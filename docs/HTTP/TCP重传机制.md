@@ -8,7 +8,7 @@ TCP 实现可靠传输方式之一 是通过序列号与应答确认
 如下图所示
 
 <div align="center">
- <img src="TCP/tcp_18.png" width="60%">
+ <img src="HTTP/TCP/tcp_18.png" width="60%">
 </div>
 图片来源 tcp/ip 图解
 
