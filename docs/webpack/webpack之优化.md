@@ -213,22 +213,243 @@ module.exports = {
 };
 ```
 
-## DillPlugin && DillReferencePlugin
+## noParse
 
-待更新
+noParse 主要的作用是过滤不需要解析的文件 比如打包的时候依赖性的三方库 jquery ｜ lodash 而这些三方库里没有其他依赖 可以通过配置 noParse 不去解析文件
 
-## 动态加载
+配置也比较简单 参考如下
 
-待更新
+```js
+const path = require("path");
+module.exports = {
+  mode: "development",
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+  },
+  module: {
+    noParse: /jquery｜lodash/,
+  },
+};
+```
 
-## resolve
+通过对比 可以发现 使用 noParse 和不使用 noParse 时间上还是差别很多的
+![](img/webpack_noparse.jpg)
 
-待更新
+## IgnorePlugin
+
+忽略第三方包指定目录 让这些指定目录不被打包
+
+我们以 moment 时间库为例子看一下
+首先我们直接引入使用该库
+
+```js
+import moment from "moment";
+
+moment.locale("zh-cn");
+
+let time = moment().endOf("day").fromNow();
+
+console.log(time);
+```
+
+然后打包 我们发现有很多我们不需要使用的语言包也一起被打包进去了
+
+![](img/webpack_moment_1.jpg)
+
+如果我们不想他们一起被打包 可以使用 IgnorePlugin 指定某些目录 不被打包
+
+```js
+const path = require("path");
+let webpack = require("webpack");
+module.exports = {
+  mode: "development",
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+  },
+  module: {
+    noParse: /jquery/,
+  },
+  plugins: [
+    // 忽略 moment 库中的 locale文件夹
+    new webpack.IgnorePlugin({
+      resourceRegExp: /^\.\/locale$/,
+      contextRegExp: /moment$/,
+    }),
+  ],
+};
+```
+
+再执行打包 可以看到 locale 文件就没有被打包 这里我就不贴图了 可以自己尝试一下
+[对应 webpack 官网地址](https://webpack.js.org/plugins/ignore-plugin/#root)
+
+需要注意的是 因为整个 locale 语言包都不被打包了 所以这个时候我们需要手动引入自己需要的语言包
+
+```js
+import moment from "moment";
+// 手动引入语言包
+import "moment/locale/zh-cn";
+moment.locale("zh-cn");
+
+let time = moment().endOf("day").fromNow();
+
+console.log(time);
+```
+
+## DllPlugin && DllReferencePlugin
+
+dll 其实本质上就是缓存，第一次打包，然后建立映射表，当后续打包先看映射表中有没有内容被缓存，如果有直接使用缓存，没有走正常的打包流程
+
+看一下如何配置
+
+可以新建一个 dll 文件
+
+webpack.dll.js 配置如下
+
+```js
+const path = require("path");
+const webpack = require("webpack");
+
+module.exports = {
+  mode: "development",
+  entry: {
+    react: ["react", "react-dom"],
+  },
+  // 这个是输出 dll 文件
+  output: {
+    path: path.resolve(__dirname, "dll"),
+    filename: "_dll_[name].js",
+    library: "_dll_[name]",
+  },
+  // 这个是输出映射表
+  plugins: [
+    new webpack.DllPlugin({
+      context: __dirname,
+      name: "_dll_[name]", // name === output.library
+      path: path.resolve(__dirname, "dll/[name].manifest.json"),
+    }),
+  ],
+};
+```
+
+webpack.config.js
+
+```js
+const path = require("path");
+let webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+module.exports = {
+  mode: "development",
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+  },
+  module: {
+    noParse: /jquery/,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ template: path.resolve("./public/index.html") }),
+    // 忽略 moment 库中的 locale文件夹
+    new webpack.IgnorePlugin({
+      resourceRegExp: /^\.\/locale$/,
+      contextRegExp: /moment$/,
+    }),
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require("./dll/react.manifest.json"),
+    }),
+  ],
+};
+```
+
+配置 package.json 文件打包命令
+
+```js
+"scripts": {
+    "dll": "webpack --config webpack.dll.js"
+  },
+```
+
+创建一个 dll 文件夹 执行 npm run dll 可以发现 dll 文件会有两个文件 一个 json 文件一个 js 文件
+js 需要手动引入 在你的 index.html 模版里
+
+现在 webpack 已经到 5 版本打包本身就很快 dll 配置 优化已经忽略不计了 所以这个配置 可有可无，不过这个思想还是值得学习一下
 
 ## include/exclude
 
-待更新
+webpack 在配置 loader 的时候可以 配置 include 或者 exclude 来提高打包效率
+我们以 babel-loader 为例
+
+```js
+module: {
+    noParse: /jquery/,
+    rules: [
+      {
+        test: /\.js$/, // 代表指定项目中的所有js文件 包括 node_modules 中的
+        exclude: /node_modules/, //排除那些文件 exclude优先级高于 include  两者同时存在且有效的情况是，exclude是include的子集
+        include: path.resolve("src"), // 需要处理的 文件或者文件名  指定需要处理的文件是include对应的文件或者文件夹中符合test指定的类型的文件
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
+      },
+    ],
+```
 
 ## happypack
 
-待更新
+需要安装 happypack 模块
+
+以 babel-loader 为例子
+
+```js
+module: {
+  //模块
+  rules: [
+    //规则，多个loader
+    {
+      test: /\.js$/,
+      use: {
+        //用 babel-loader 把es6转es5
+        loader: "babel-loader",
+      },
+    },
+  ];
+}
+```
+
+使用 happypack 后
+
+```js
+const Happypack = require("happypack"); //happypack 模块插件 可实现多线程打包
+
+module.exports = {
+  plugins: [
+    //存放所有插件
+    new Happypack({
+      id: "js",
+      use: [
+        {
+          //用 babel-loader 把es6转es5
+          loader: "babel-loader",
+        },
+      ],
+    }),
+  ],
+  module: {
+    //模块
+    rules: [
+      //规则，多个loader
+      {
+        test: /\.js$/,
+        use: "happypack/loader?id=js", //这里的js是指定id为js的happypack插件
+      },
+    ],
+  },
+};
+```
+
+happypack 在项目比较小的时候 反而会增加打包时间，所以不适合在小项目中使用
