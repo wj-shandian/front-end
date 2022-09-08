@@ -95,6 +95,8 @@
   - [webpack 之基础](webpack/webpack之基础.md "webpack之基础")
   - [webpack 之 babel](webpack/webpack之babel.md "webpack之babel")
   - [webpack 打包第三方类库的几种方式](webpack/webpack打包第三方类库的几种方式.md "webpack打包第三方类库的几种方式")
+  - [hash-chunkhash-contenthash 概念](webpack/hash-chunkhash-contenthash概念.md "hash-chunkhash-contenthash概念")
+- AST
   - [webpack 之优化](webpack/webpack之优化.md "webpack之优化")
   - [webpack 之 loader](webpack/webpack之loader.md "webpack之loader")
   - [webpack 之 plugin](webpack/webpack之plugin.md "webpack之plugin")
