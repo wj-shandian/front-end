@@ -100,7 +100,6 @@
   - [webpack 之 loader](webpack/webpack之loader.md "webpack之loader")
   - [webpack 之 plugin](webpack/webpack之plugin.md "webpack之plugin")
   - [webpack 多页热更新慢问题](webpack/webpack多页热更新慢问题.md "webpack多页热更新慢问题")
-  - [import 被 webpack 编译成了什么](webpack/import被webpack编译成了什么.md "import被webpack编译成了什么")
   - [webpack5 新特性](webpack/webpack5新特性.md "webpack5新特性")
   - [关于 polyfill 一些知识点](webpack/关于polyfill一些知识点.md "关于polyfill一些知识点")
   - [webpack 原理](webpack/webpack原理.md "webpack原理")
