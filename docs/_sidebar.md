@@ -78,6 +78,7 @@
   - [react 渲染优化](React/react渲染优化.md "react渲染优化")
   - [react-hoc](React/react-hoc.md "react-hoc")
   - [reactHook 理解文字篇](React/reactHook理解文字篇.md "reactHook理解文字篇")
+  - [reactDiff 和 vueDiff 区别](React/reactDiff和vueDiff区别.md "reactDiff和vueDiff区别")
 - React 源码系列
   - [说明](react-source-code/READM.md "READM")
 - ReactNative
