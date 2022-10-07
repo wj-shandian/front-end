@@ -1,6 +1,13 @@
-loader 是什么？loader 其实就是一种转换器，  
+## loader 是什么？
+
+webpack 自带的的打包器只能支持 js，当我们想要加载 css/scss/ts/md 等格式的文件时就需要用到 loader
+loader 的原理是把文件内容包装成能运行的 js
+
+loader 其实就是一种转换器，  
 比如 babel-loader 可以将 es6 的代码转化为 es5 的代码
 比如 sass-loader 可以将 sass 语法的 css 转化为 css
+而 css-loader 就是把 css 代码变成 export default str 的形式代码
+style-loader 把代码挂载到 head 到 style 标签里
 
 本文将带你实现一个简单的 loader 体会一下 loader 的大致流程
 

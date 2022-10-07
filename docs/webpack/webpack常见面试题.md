@@ -38,3 +38,5 @@
 - 目前 parcel 只能用来构建用于运行在浏览器中的网页
 - 优点 1.parcel 内置来常见场景的构建方案以及依赖 无需安装各种依赖 2.parcel 是以 html 为入口 自动检测和打包依赖资源 3.parcel 默认支持模块热替换 真正的开箱即用
 - 缺点 不支持 sourceMap 配置不灵活 不支持 tree-shaking
+
+## webpack 的构建流程
