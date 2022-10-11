@@ -98,6 +98,7 @@
   - [webpack 打包第三方类库的几种方式](webpack/webpack打包第三方类库的几种方式.md "webpack打包第三方类库的几种方式")
   - [hash-chunkhash-contenthash 概念](webpack/hash-chunkhash-contenthash概念.md "hash-chunkhash-contenthash概念")
   - [webpack 之优化](webpack/webpack之优化.md "webpack之优化")
+  - [webpack 之 treeshaking 原理](webpack/webpack之treeshaking原理.md "webpack之treeshaking原理")
   - [webpack 之 loader](webpack/webpack之loader.md "webpack之loader")
   - [webpack 之 plugin](webpack/webpack之plugin.md "webpack之plugin")
   - [webpack 多页热更新慢问题](webpack/webpack多页热更新慢问题.md "webpack多页热更新慢问题")

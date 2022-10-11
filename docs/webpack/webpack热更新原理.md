@@ -1,4 +1,4 @@
-## 什么事热更新（HMR）
+## 什么是热更新（HMR）
 
 Hot Module Replacement 是指当我们对代码修改并保存后，webpack 将会对代码进行重新打包，并将新的模块发送到浏览器端，浏览器会用新的模块替换旧的模块，在实现不刷新浏览器的前提下更新页面
 
@@ -15,7 +15,6 @@ webpack.config.js
 ```js
 let path = require("path");
 let webpack = require("webpack");
-
 let HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -70,4 +69,14 @@ module.exports = "title";
 - 一般一个入口会依赖多个模块
 - 一个入口一般会对应一个 chunk，这个 chunk 包含这个入口依赖的所有模块
 
-2.
+2. HotModuleReplacementPlugin
+
+- webpack/lib/HotModuleReplacementPlugin.js
+- 它会生成两个补丁文件
+  - 上一次编译生成的 hash.hot-update.json 说明从上次到现在哪些模块改变了
+  - chunk 名称，上一次编译生成的 hash.hot-update.js 存放此代码块最新的模块定义 里面会调用 webpackHotUpdate 方法
+  - 向代码块中注入 HMR runtime 代码 热更新的逻辑，比如：拉取代码 执行代码 执行 accept 回调都是它注入到 chunk 中的
+
+3. hash.hot-update.json
+
+![](img/webpack-hot-1.png)
