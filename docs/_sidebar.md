@@ -105,6 +105,7 @@
   - [webpack5 新特性](webpack/webpack5新特性.md "webpack5新特性")
   - [关于 polyfill 一些知识点](webpack/关于polyfill一些知识点.md "关于polyfill一些知识点")
   - [webpack 原理](webpack/webpack原理.md "webpack原理")
+  - [webpack 热更新原理](webpack/webpack热更新原理.md "webpack热更新原理")
 - AST
   - [AST 浅析](ast/抽象语法树.md "AST浅析")
 - rollup
