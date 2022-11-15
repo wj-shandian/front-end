@@ -194,6 +194,10 @@ console.log(person.name); // axuebin
 
 - 为什么箭头函数没有自己的 this,因为箭头函数中的 this 在编译的时候会被变量替代
 
+- 没有 arguments
+
+- 不能被 call bind apply 改变 this 指向
+
 ```js
 // 编译前书写的箭头函数
 let test = {
@@ -218,6 +222,56 @@ let test = {
 ```
 
 - 为什么箭头函数内部可以使用 this,因为它会从自己的作用域链的上一层继承 this
+
+说到箭头函数，哪些场景下是不适合用箭头函数呢？
+
+1. 对象方法
+
+```js
+const obj = {
+  name: "测试",
+  getName: () => {
+    // 如果要在对象方法里 使用this获取对象的某些属性 那么 不能用箭头函数 因为这个this是外层的this不是对象的this
+    return this.name;
+  },
+};
+```
+
+2. 原型方法
+
+```js
+const obj = {
+  name: "测试",
+};
+obj.__proto__.getName = () => {
+  // 同样 这个this也不是指向obj对象
+  return this.name;
+};
+```
+
+3. 构造函数
+
+```js
+const Fun = (name) => {
+  this.name = name;
+};
+new Fun("测试");
+// 箭头函数不能作为构造函数
+```
+
+4. 动态上下文中的回调函数
+
+```js
+const btn = document.getElementById("btn");
+btn.addEventListener("click", () => {
+  // 如果要在回调函数中使用 this 那么不能使用箭头函数 如果不使用 可以使用
+  this.innerHTML = "测试";
+});
+```
+
+5. Vue 生命周期和 method
+
+这个就不举例了，因为写了代码就会报错
 
 ## 题解分析
 
