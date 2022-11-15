@@ -246,7 +246,10 @@ class PromiseA {
       reject(error);
     }
   }
-
+  // 增加一个catch捕获错误
+  catch(onRejected) {
+    return this.then(null, onRejected);
+  }
   then(onFulfilled, onRejected) {
     //解决 onFufilled，onRejected 没有传值的问题
     //Promise/A+ 2.2.1 / Promise/A+ 2.2.5 / Promise/A+ 2.2.7.3 / Promise/A+ 2.2.7.4
@@ -349,6 +352,8 @@ const promise = new PromiseA((resolve, reject) => {
 
 链式调用没看明白，记录一下 ，慢慢研究，难过
 
+现在看懂了 -- 2022 年
+
 ## promise.all 的实现
 
 实现并发，获取多个异步结果，有一个失败则都失败
@@ -413,6 +418,7 @@ Promise.all([1, 2, 3, p1, p2]).then(
 
 ```js
 Promise.race = function (promises) {
+  promises = Array.isArray(promises) ? promises : [];
   return new Promise((resolve, reject) => {
     // 一起执行就是for循环
     for (let i = 0; i < promises.length; i++) {
@@ -425,6 +431,110 @@ Promise.race = function (promises) {
       }
     }
   });
+};
+```
+
+## promise.any
+
+```js
+// 只要有一个成功就成功 全部失败才失败
+Promise.any = function (values) {
+  values = Array.isArray(values) ? values : [];
+  return new myPromise((resolve, reject) => {
+    let length = values.length;
+    const err = [];
+    if (length === 0)
+      return reject(new AggregateError("all promise is reject"));
+    values.forEach((item) => {
+      if (item && typeof item.then === "function") {
+        item.then(
+          (res) => {
+            resolve(res);
+          },
+          (error) => {
+            length--;
+            err.push(error);
+            if (length === 0) {
+              reject(new AggregateError(error));
+            }
+          }
+        );
+      } else {
+        resolve(item);
+      }
+    });
+  });
+};
+```
+
+## promise.allSettled
+
+```js
+// 全部结束才结束
+Promise.allSettled = function (values) {
+  values = Array.isArray(values) ? values : [];
+  let length = values.length;
+  const result = [];
+  if (length === 0) return reject(new AggregateError("promise array is empty"));
+  return new myPromise((resolve, reject) => {
+    values.forEach((item) => {
+      if (item && typeof item.then === "function") {
+        item.then(
+          (res) => {
+            result.push(res);
+            length--;
+            if (length === 0) resolve(result);
+          },
+          (err) => {
+            result.push(err);
+            length--;
+            if (length === 0) resolve(result);
+          }
+        );
+      } else {
+        result.push(item);
+        length--;
+        if (length === 0) resolve(result);
+      }
+    });
+  });
+};
+```
+
+## promise.resolve
+
+```js
+Promise.resolve = function (value)=>{
+  return new myPromise((resolve,reject)=>{
+    resolve(value)
+  })
+}
+```
+
+## promise.reject
+
+```js
+Promise.reject = function (value)=>{
+  return new myPromise((resolve,reject)=>{
+    reject(value)
+  })
+}
+```
+
+## promise.finally
+
+```js
+Promise.finally = function (fn) {
+  return this.then(
+    (value) => {
+      fn();
+      return value;
+    },
+    (reason) => {
+      fn();
+      throw reason;
+    }
+  );
 };
 ```
 
