@@ -27,6 +27,7 @@
   - [V8 垃圾回收机制原理](js/V8垃圾回收机制原理.md "V8垃圾回收机制原理")
   - [Generator](js/Generator.md "Generator")
   - [模块化发展历程](js/模块化发展历程.md "模块化发展历程")
+  - [严格模式下的特点](js/严格模式下的特点.md "严格模式下的特点")
 - CSS
   - [BFC](css/BFC.md "BFC")
   - [css 单位](css/css单位.md "css单位")
