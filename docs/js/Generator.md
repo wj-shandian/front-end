@@ -90,6 +90,11 @@ let obj = {
 
 生成器对象是由一个 generator function 返回的 并且它符合可迭代协议和迭代器协议
 
+生成器有两个特征
+
+- function 关键字和函数名之间有一个星号
+- 函数体内部使用 yield 表达式 定义不同的内部状态
+
 普通函数和迭代器函数的区别
 
 ![generator](img/genertaor.jpg)
@@ -145,3 +150,33 @@ console.log(itor.next(10));
 // 10
 //->{done:true,value:undefined}
 ```
+
+### throw
+
+Generator 有一个 throw 方法 可以在函数体外抛出错误 在 Generator 函数体内捕获
+
+例如
+
+```js
+var g = function* () {
+  try {
+    yield;
+  } catch (e) {
+    console.log("内部捕获", e);
+  }
+};
+
+var i = g();
+i.next();
+
+try {
+  i.throw("a");
+  i.throw("b");
+} catch (e) {
+  console.log("外部捕获", e);
+}
+// 内部捕获 a
+// 外部捕获 b
+```
+
+但是只能第一次捕获 第二次抛出错误 会被函数体外 捕获
