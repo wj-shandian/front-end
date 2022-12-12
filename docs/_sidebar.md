@@ -72,6 +72,7 @@
   - [TS 工具类](TS/TS工具类.md "TS工具类")
   - [组合类型的检查(窄化)](<TS/组合类型的检查(窄化).md> "组合类型的检查(窄化)")
   - [理解 infer 和 TS 的计算能力](TS/理解infer和TS的计算能力.md "理解infer和TS的计算能力")
+  - [TS 常见面试题](TS/TS常见面试题.md "TS常见面试题")
 - React
   - [hook 基础](React/react-hook.md "react-hook基础知识")
   - [react-jsx](React/react-jsx.md "react-jsx")
