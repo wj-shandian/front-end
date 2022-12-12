@@ -30,7 +30,7 @@ type B = 'a' | 'b' extends ? 'a':'b'
 // type B = 'b'
 
 type C<T> = T extends 'a':'b'
-type D = P<'a'|'b'>
+type D = C<'a'|'b'>
 // type D = 'a' | 'b'
 ```
 
