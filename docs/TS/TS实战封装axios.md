@@ -1,5 +1,7 @@
 使用 ts 实现一个简易版本的 axios
 
+[仓库地址](https://github.com/wj-shandian/axios-ts)
+
 ## 创建项目
 
 ```js
@@ -264,8 +266,127 @@ export interface AxiosRequestConfig {
 
 ## 拦截器
 
-## 合并配置
+axios 有请求拦截器和响应拦截器 并且都可以设置多个
 
-## 转化请求合响应
+请求拦截是 先设置的 后执行 先进后出 响应拦截是先进先出
+
+![](img/axios.jpg)
+
+不再贴代码 具体查看 仓库的 feature/interceptors 分支
+
+关键代码讲解
+
+```ts
+request<T>(
+    config: AxiosRequestConfig
+  ): Promise<AxiosRequestConfig | AxiosResponse<T>> {
+    // return this.dispatchRequest<T>(config);
+    const chain: Array<
+      Interceptor<AxiosRequestConfig> | Interceptor<AxiosResponse<T>>
+    > = [
+      {
+        onFulfilled: this.dispatchRequest,
+      },
+    ];
+    this.interceptors.request.interceptors.forEach(
+      (interceptor: Interceptor<AxiosRequestConfig> | null) => {
+        // 向数组右侧添加一个数据
+        interceptor && chain.unshift(interceptor);
+      }
+    );
+    this.interceptors.response.interceptors.forEach(
+      (interceptor: Interceptor<AxiosResponse> | null) => {
+        // 向数组左侧添加一个数据
+        interceptor && chain.push(interceptor);
+      }
+    );
+    let promise: any = Promise.resolve(config);
+    while (chain.length) {
+      const { onFulfilled, onRejected } = chain.shift()!;
+      promise = promise.then(onFulfilled, onRejected);
+    }
+    return promise;
+  }
+```
+
+把 request 放在数组中间 根据添加的拦截器 分别放置在 数组两边 然后 循环数组执行 promise
 
 ## 任务取消
+
+新建 cancel 文件
+
+```ts
+export class Cancel {
+  message: string;
+  constructor(value: string) {
+    this.message = value;
+  }
+}
+
+export function isCancel(error: any) {
+  return error instanceof Cancel;
+}
+
+export class CancelToken {
+  public resolve: any;
+  source() {
+    return {
+      token: new Promise((resolve) => {
+        this.resolve = resolve;
+      }),
+      cancel: (message: string) => {
+        this.resolve(new Cancel(message));
+      },
+    };
+  }
+}
+```
+
+新增测试代码
+index
+
+```ts
+// 取消
+let cancelToken = axios.cancelToken;
+let isCancel = axios.isCancel;
+const source = cancelToken.source();
+
+axios({
+  method: "post",
+  url: baseUrl + "/post",
+  headers: {
+    "content-type": "application/json",
+  },
+  cancelToken: source.token, // 添加 cancel标志
+  // timeout: 2000,
+  data: user,
+})
+  .then((response: AxiosResponse) => {
+    console.log(response, "post");
+    return response.data;
+  })
+  .catch((err) => {
+    if (isCancel(err)) {
+      console.log("取消了", err);
+    } else {
+      console.log(err);
+    }
+  });
+source.cancel("用户取消了"); // 触发取消
+```
+
+axios 文件 添加 取消
+
+```ts
+// 取消
+if (config.cancelToken) {
+  config.cancelToken.then((message: any) => {
+    reject(message);
+    request.abort(); // ajax 取消请求
+  });
+}
+```
+
+具体可以参考 feature/cancel 分支
+
+以上就是简单版本的 axios 当然还有很多功能没有实现 就不一一写了 主要的目的还是练习一下 TS，加深一些 TS 操作
