@@ -132,6 +132,7 @@
   - [混合加密的流程](tech-essays/混合加密的流程.md "混合加密的流程")
   - [持续集成 CICD](tech-essays/持续集成CICD.md "持续集成CICD")
   - [移动端如何做适配](tech-essays/移动端如何做适配.md "移动端如何做适配")
+  - [小程序遇到的问题](tech-essays/小程序遇到的问题.md "小程序遇到的问题")
 - Canvas
   - [基本概念](canvas/基本概念.md "基本概念")
 - HTTP
