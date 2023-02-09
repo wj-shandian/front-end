@@ -89,6 +89,7 @@
   - [react-hoc](React/react-hoc.md "react-hoc")
   - [reactHook 理解文字篇](React/reactHook理解文字篇.md "reactHook理解文字篇")
   - [reactDiff 和 vueDiff 区别](React/reactDiff和vueDiff区别.md "reactDiff和vueDiff区别")
+  - [react 重要的 changeLog](React/react重要的changeLog.md "react重要的changeLog")
 - ReactNative
   - [reactNative 启动失败可能的问题](ReactNative/reactNative启动失败可能的问题.md "reactNative启动失败可能的问题")
   - [unstated-next 的用法](ReactNative/unstated-next的用法.md "unstated-next的用法")
