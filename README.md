@@ -170,6 +170,7 @@
   - [关联两个仓库，如何 A 仓库合并 B 仓库分支](docs/Git/关联两个仓库，如何A仓库合并B仓库分支.md "关联两个仓库，如何A仓库合并B仓库分支")
   - [关于 gitcommit 规范提交](docs/Git/关于gitcommit规范提交.md "关于gitcommit规范提交")
   - [cherry-pick](docs/Git/cherry-pick.md "cherry-pick")
+  - [git 删除 commit 相关操作](docs/Git/git删除commit相关操作.md "git删除commit相关操作")
 - 设计模式
   - [单例模式](docs/designMode/单例模式.md "单例模式")
   - [发布订阅模式](docs/designMode/发布订阅模式.md "发布订阅模式")
