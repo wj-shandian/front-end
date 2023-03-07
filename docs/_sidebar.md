@@ -78,6 +78,7 @@
   - [理解 infer 和 TS 的计算能力](TS/理解infer和TS的计算能力.md "理解infer和TS的计算能力")
   - [TS 常见面试题](TS/TS常见面试题.md "TS常见面试题")
   - [TS 实战封装 axios](TS/TS实战封装axios.md "TS实战封装axios")
+  - [js 重载和 ts 重载](TS/js重载和ts重载.md "js重载和ts重载")
 - React
   - [hook 基础](React/react-hook.md "react-hook基础知识")
   - [react-jsx](React/react-jsx.md "react-jsx")
