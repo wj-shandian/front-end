@@ -219,3 +219,5 @@ p1,p2，p3 的状态都成功了，那么 p 的状态才成功，否则有一个
   .then(...)
   .catch(...)
 ```
+
+try catch 无法捕获 promise reject 抛出的错误
