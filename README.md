@@ -144,6 +144,7 @@
   - [移动端如何做适配](docs/tech-essays/移动端如何做适配.md "移动端如何做适配")
   - [小程序遇到的问题](docs/tech-essays/小程序遇到的问题.md "小程序遇到的问题")
   - [vite+react 项目初始化过程](docs/tech-essays/vite+react项目初始化过程.md "vite+react项目初始化过程")
+  - [npm 打补丁](docs/tech-essays/npm打补丁.md "npm打补丁")
 - Canvas
   - [基本概念](docs/canvas/基本概念.md "基本概念")
 - HTTP
@@ -168,6 +169,8 @@
 
 - 单元测试
   - [jest 单元测试入门](docs/jest/jest单元测试入门.md "jest单元测试入门")
+- Nginx
+  - [nginx 相关配置集合](docs/nginx/nginx相关配置集合.md "nginx相关配置集合")
 - Git
   - [git 基础入门](docs/Git/git基础入门.md "git基础入门")
   - [关联两个仓库，如何 A 仓库合并 B 仓库分支](docs/Git/关联两个仓库，如何A仓库合并B仓库分支.md "关联两个仓库，如何A仓库合并B仓库分支")
