@@ -95,6 +95,8 @@
   - [reactHook 理解文字篇](docs/React/reactHook理解文字篇.md "reactHook理解文字篇")
   - [reactDiff 和 vueDiff 区别](docs/React/reactDiff和vueDiff区别.md "reactDiff和vueDiff区别")
   - [react 重要的 changeLog](docs/React/react重要的changeLog.md "react重要的changeLog")
+- React 源码相关
+  - [1-项目初始化](react-source-code/1-项目初始化.md "1-项目初始化")
 - ReactNative
   - [reactNative 启动失败可能的问题](docs/ReactNative/reactNative启动失败可能的问题.md "reactNative启动失败可能的问题")
   - [unstated-next 的用法](docs/ReactNative/unstated-next的用法.md "unstated-next的用法")
