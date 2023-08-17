@@ -30,6 +30,18 @@ import { jsx as _jsx } from "react/jsx-runtime";
 
 [react 官网介绍了一些关于新的 jsx 转换](https://zh-hans.legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)
 
+## jsx 转化
+
+jsx 转化主要分为 编译时 和运行时
+
+编译是由 babel 来实现的
+
+所以我们来实现运行时的 jsx 转化
+
+1. 实现 jsx
+2. 实现打包流程
+3. 调试打包结果
+
 ## 开始写 jsx 方法
 
 新建文件
