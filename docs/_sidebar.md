@@ -146,6 +146,8 @@
   - [小程序遇到的问题](tech-essays/小程序遇到的问题.md "小程序遇到的问题")
   - [vite+react 项目初始化过程](tech-essays/vite+react项目初始化过程.md "vite+react项目初始化过程")
   - [npm 打补丁](tech-essays/npm打补丁.md "npm打补丁")
+- 翻译文章
+  - [说明](translation/说明.md "说明")
 - Canvas
   - [基本概念](canvas/基本概念.md "基本概念")
 - HTTP
