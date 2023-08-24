@@ -1,23 +1,36 @@
 [原文](https://www.developerway.com/posts/how-to-use-memo-use-callback)
 
-- [x] 翻译进行中 0%
+- [x] 翻译进行中 3%
 
 # How to useMemo and useCallback: you can remove most of them
 
-# 如何使用 useMemo 和 useCallback,你可以删除应用中的大部分
+# 如何使用 useMemo 和 useCallback,你可以删除其中的大部分
 
 What is the purpose of useMemo and useCallback hooks, mistakes and best practices in using them, and why removing most of them might be a good idea.
+<font color="red">useMemo 和 useCallback 的 hooks 的目的是什么，使用他们的错误和最佳实践是什么，并且为什么移除他们其中大部是一个好主意</font>
+If you’re not completely new to React, you’re probably already at least familiar with useMemo and useCallback hooks.
+<font color="red">如果你对 react 不完全陌生，那么你可能至少已经熟悉 useMemo 和 useCallback 的 hooks。（probable:至少，already:已经，familiar：熟悉）</font>
 
-If you’re not completely new to React, you’re probably already at least familiar with useMemo and useCallback hooks. And if you work on a medium to large-scale application, chances are you can describe some parts of your app as an “incomprehensible chain of useMemo and useCallbacks that is impossible to read and debug". Those hooks somehow have the ability to just spread around the code uncontrollably, until they just completely take over and you find yourself writing them just because they are everywhere and everyone around you is writing them.
+And if you work on a medium to large-scale application, chances are you can describe some parts of your app as an “incomprehensible chain of useMemo and useCallbacks that is impossible to read and debug".
+<font color="red">如果你在一个中大型应用中使用，你有可能将应用程序的某部分描述为“一连串难以理解的 useMemo 和 useCallback”，无法阅读和调试（large-scale：大型，incomprehensible：无法理解，chain：串联）</font>
 
-And do you know the sad part? All of this is completely unnecessary. You can probably remove 90% of all useMemo and useCallbacks in your app right now, and the app will be fine and might even become slightly faster. Don’t get me wrong, I’m not saying that useMemo or useCallback are useless. Just that their use is limited to a few very specific and concrete cases. And most of the time we’re wrapping things in them unnecessary.
+Those hooks somehow have the ability to just spread around the code uncontrollably, until they just completely take over and you find yourself writing them just because they are everywhere and everyone around you is writing them.
+<font color="red">这些 hooks 有能力不受控制的在代码周围四处传播（somehow：以某种方式，spread：展开，uncontrollably：不能控制的）,直到它完全占据你的思想并且你会发现你一直在写它，因为在你周围所有人都在写它（take over：占据）</font>
 
+And do you know the sad part? All of this is completely unnecessary. You can probably remove 90% of all useMemo and useCallbacks in your app right now, and the app will be fine and might even become slightly faster.
+<font color="red"></font>
+Don’t get me wrong, I’m not saying that useMemo or useCallback are useless. Just that their use is limited to a few very specific and concrete cases. And most of the time we’re wrapping things in them unnecessary.
+<font color="red"></font>
 So this is what I want to talk about today: what kind of mistakes developers make with useMemo and useCallback, what is their actual purpose, and how to use them properly.
+<font color="red"></font>
 
 There are two major sources of the poisonous spread of those hooks in the app:
+<font color="red"></font>
 
 - memoizing props to prevent re-renders
+- <font color="red"></font>
 - memoizing values to avoid expensive calculations on every re-render
+- <font color="red"></font>
 
 We’ll take a look at them later in the article, but first: what exactly is the purpose of useMemo and useCallback?
 
