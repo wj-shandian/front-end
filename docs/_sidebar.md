@@ -148,6 +148,7 @@
   - [npm 打补丁](tech-essays/npm打补丁.md "npm打补丁")
 - 翻译文章
   - [说明](translation/说明.md "说明")
+  - [如何使用 useMemo 和 useCallback 你可以删除大部分](translation/如何使用useMemo和useCallback你可以删除大部分.md "如何使用useMemo和useCallback你可以删除大部分")
 - Canvas
   - [基本概念](canvas/基本概念.md "基本概念")
 - HTTP
