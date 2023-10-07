@@ -78,6 +78,35 @@ function.call(thisArg, arg1, arg2, ...)
 
 ### call
 
+```js
+let foo = {
+  value: 1,
+};
+function bar() {
+  console.log(this.value);
+}
+bar.call(foo); // 1
+//本质上和下面的代码是一个效果
+let foo = {
+  value: 1,
+  bar: function () {
+    console.log(this.value);
+  },
+};
+// 因为谁调用 this执行谁 所以这里bar中的this指向 foo
+foo.bar();
+// 所以我们只需要实现步骤可以分为
+// 把 bar放到 foo中
+// 执行 bar
+// 因为foo中没有bar 还需要删除 bar
+// 看下伪代码
+/**
+ * foo.someFn = bar
+ * foo.someFn()
+ * delete foo.someFn
+ * **/
+```
+
 `thisArg`: 是指在`function`运行时指定的`this`
 
 - 不传或者传 null/undefined 函数的的`this`执向 window
@@ -109,7 +138,7 @@ a.call(obj); //Object
 // 模拟实现call
 // 第一步 简单实现了this的指向
 Function.prototype.call2 = function (context) {
-  // this是指b这个函数
+  // this是指b这个函数 因为是b调用的call2
   context.fn = this;
   context.fn();
   delete context.fn;
@@ -422,19 +451,19 @@ Function.prototype.bind1 = function (context) {
  * 重写内置BIND：柯理化思想「预处理思想」
  */
 Function.prototype.bind = function bind(context, ...outerArgs) {
-    // this->fn context->obj outerArgs->[10,20]
-    let self = this;
-    return function (...innerArgs) {
-        // innerArgs->[ev]
-        self.call(context, ...outerArgs.concat(innerArgs));
-    };
+  // this->fn context->obj outerArgs->[10,20]
+  let self = this;
+  return function (...innerArgs) {
+    // innerArgs->[ev]
+    self.call(context, ...outerArgs.concat(innerArgs));
+  };
 };
 
 function fn(x, y, ev) {
-    console.log(this, x, y, ev);
+  console.log(this, x, y, ev);
 }
 let obj = {
-    name: 'zhufeng'
+  name: "zhufeng",
 };
 
 /* document.body.onclick = function (ev) {
@@ -442,8 +471,6 @@ let obj = {
 }; */
 document.body.onclick = fn.bind(obj, 10, 20);
 ```
-
-
 
 参考文献：
 

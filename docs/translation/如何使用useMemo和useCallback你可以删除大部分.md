@@ -6,31 +6,32 @@
 
 # 如何使用 useMemo 和 useCallback,你可以删除其中的大部分
 
-What is the purpose of useMemo and useCallback hooks, mistakes and best practices in using them, and why removing most of them might be a good idea.
+What is the purpose of useMemo and useCallback hooks, mistakes and best practices in using them, and why removing most of them might be a good idea.  
 <font color="red">useMemo 和 useCallback 的 hooks 的目的是什么，使用他们的错误和最佳实践是什么，并且为什么移除他们其中大部是一个好主意</font>
-If you’re not completely new to React, you’re probably already at least familiar with useMemo and useCallback hooks.
+
+If you’re not completely new to React, you’re probably already at least familiar with useMemo and useCallback hooks.  
 <font color="red">如果你对 react 不完全陌生，那么你可能至少已经熟悉 useMemo 和 useCallback 的 hooks。（probable:至少，already:已经，familiar：熟悉）</font>
 
-And if you work on a medium to large-scale application, chances are you can describe some parts of your app as an “incomprehensible chain of useMemo and useCallbacks that is impossible to read and debug".
+And if you work on a medium to large-scale application, chances are you can describe some parts of your app as an “incomprehensible chain of useMemo and useCallbacks that is impossible to read and debug".  
 <font color="red">如果你在一个中大型应用中使用，你有可能将应用程序的某部分描述为“一连串难以理解的 useMemo 和 useCallback”，无法阅读和调试（large-scale：大型，incomprehensible：无法理解，chain：串联）</font>
 
-Those hooks somehow have the ability to just spread around the code uncontrollably, until they just completely take over and you find yourself writing them just because they are everywhere and everyone around you is writing them.
+Those hooks somehow have the ability to just spread around the code uncontrollably, until they just completely take over and you find yourself writing them just because they are everywhere and everyone around you is writing them.  
 <font color="red">这些 hooks 有能力不受控制的在代码周围四处传播（somehow：以某种方式，spread：展开，uncontrollably：不能控制的）,直到它完全占据你的思想并且你会发现你一直在写它，因为在你周围所有人都在写它（take over：占据）</font>
 
-And do you know the sad part? All of this is completely unnecessary. You can probably remove 90% of all useMemo and useCallbacks in your app right now, and the app will be fine and might even become slightly faster.
+And do you know the sad part? All of this is completely unnecessary. You can probably remove 90% of all useMemo and useCallbacks in your app right now, and the app will be fine and might even become slightly faster.  
 <font color="red">
 你知道最可悲的是什么吗？所有的这些都是完全不需要的，你现在可以删除应用中 90%的 useMemo 和 useCallback，应用还可以正常运行，甚至可能会稍微快一点（unnecessary：完全不需要，slightly：稍微）
 </font>
-Don’t get me wrong, I’m not saying that useMemo or useCallback are useless. Just that their use is limited to a few very specific and concrete cases. And most of the time we’re wrapping things in them unnecessary.
+Don’t get me wrong, I’m not saying that useMemo or useCallback are useless. Just that their use is limited to a few very specific and concrete cases. And most of the time we’re wrapping things in them unnecessary.  
 <font color="red">
 不要误解我，我没有说 useMemo 或者 useCallback 是没有用的，只是说他们的使用只在一些特殊的或者具体场景使用，并且大多数情况下我们都完全不需要用它包装东西（useless：无用的，specific：特殊的，concrete：具体的，cases：案件）
 </font>
-So this is what I want to talk about today: what kind of mistakes developers make with useMemo and useCallback, what is their actual purpose, and how to use them properly.
+So this is what I want to talk about today: what kind of mistakes developers make with useMemo and useCallback, what is their actual purpose, and how to use them properly.  
 <font color="red">
 因此今天我想讨论的是：开发者时使用 useMemo 和 useCallback 会犯那些错误，他们真正的用途是什么，以及我们应该怎样去使用他们
 </font>
 
-There are two major sources of the poisonous spread of those hooks in the app:
+There are two major sources of the poisonous spread of those hooks in the app:  
 <font color="red">
 这两个 hooks 在应用程序中毒害传播是主要的两个来源：（major：专业，poisonous：有毒）
 </font>
@@ -40,7 +41,7 @@ There are two major sources of the poisonous spread of those hooks in the app:
 - memoizing values to avoid expensive calculations on every re-render
 - <font color="red">缓存 values，避免重新渲染去做昂贵的计算（avoid:避免，expensive：昂贵的 ，calculations：计算）</font>
 
-We’ll take a look at them later in the article, but first: what exactly is the purpose of useMemo and useCallback?
+We’ll take a look at them later in the article, but first: what exactly is the purpose of useMemo and useCallback?  
 <font color="red">我们看下面文章的讨论：但是首选我们要知道 useMemo 和 useCallback 真是的目的是什么？</font>
 
 ## Why do we need useMemo and useCallback
