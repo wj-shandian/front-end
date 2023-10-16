@@ -27,6 +27,7 @@
   - [事件机制](docs/js/事件机制.md "事件机制")
   - [柯里化](docs/js/柯里化.md "柯里化")
   - [let-const-var](docs/js/let-const-var.md "let-const-var的区别")
+  - [模版字符串的实现原理](js/模版字符串的实现原理.md "模版字符串的实现原理")
   - [promise 用法以及相关概念](docs/js/promise用法以及相关概念.md "promise用法以及相关概念")
   - [手写 Promise](docs/js/手写Promise.md "手写Promise")
   - [V8 垃圾回收机制原理](docs/js/V8垃圾回收机制原理.md "V8垃圾回收机制原理")
