@@ -186,6 +186,7 @@
   - [cherry-pick](docs/Git/cherry-pick.md "cherry-pick")
   - [git 删除 commit 相关操作](docs/Git/git删除commit相关操作.md "git删除commit相关操作")
   - [git 合并 commit](docs/Git/git合并commit.md "git合并commit")
+  - [git-reset](docs/Git/git-reset.md "git-reset")
 - 设计模式
   - [单例模式](docs/designMode/单例模式.md "单例模式")
   - [发布订阅模式](docs/designMode/发布订阅模式.md "发布订阅模式")
