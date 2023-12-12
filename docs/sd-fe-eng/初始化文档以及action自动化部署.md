@@ -169,3 +169,37 @@ jobs:
 然后在 项目上的 `Settings` 找到 `Pages` 设置分支以及目录 再设置访问的域名即可。
 
 至此已经可以访问静态网站了，接下来开始 正式的规范开发。
+
+## deploy.sh
+
+除了上面的自动化部署 我们也可以用下面的脚本进行构建部署 提交
+
+```sh
+#!/usr/bin/env sh
+
+# 确保脚本抛出遇到的错误
+set -e
+
+
+push_addr=`git remote get-url --push origin`
+commit_info=`git describe --all --always --long`
+dist_path=docs/.vuepress/dist
+push_branch=gh-pages
+
+# 生成静态文件
+npm run docs:build
+
+# 进入生成的文件夹
+cd $dist_path
+
+git init
+git add -A
+git commit -m "deploy, $commit_info"
+git push -f $push_addr HEAD:$push_branch
+
+cd -
+rm -rf $dist_path
+
+```
+
+打包发布完之后可以自动提交到 github pages 了。
