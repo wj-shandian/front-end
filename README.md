@@ -135,6 +135,8 @@
   - [rollup 实战](docs/rollup/rollup实战.md "rollup实战")
 - 前端工程化规范项目
   - [初始化文档以及action自动化部署](docs/sd-fe-eng/初始化文档以及action自动化部署.md "初始化文档以及action自动化部署")
+  - [markdownlint规范开发](docs/sd-fe-eng/markdownlint规范开发.md "markdownlint规范开发")
+  - [commitlint规范开发](docs/sd-fe-eng/commitlint规范开发.md "commitlint规范开发")
 - 技术杂文
   - [关于微前端的理解与实战](docs/tech-essays/关于微前端的理解与实战.md "关于微前端的理解与实战")
   - [node 如何调用 c++库](docs/tech-essays/node如何调用c++库.md "node如何调用c++库")
