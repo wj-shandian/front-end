@@ -1,4 +1,4 @@
-# 如果拥有自己的文档规范
+# 如何拥有自己的文档规范
 
 ## 首先在项目 sd-fe-eng 初始化文件
 
@@ -154,3 +154,11 @@ package.json的main入口 改为index.json
 这里建议在vscode安装markdownlint插件 能够实时看到错误并且保存时可以自动修复
 
 ## 发布npm
+
+首先注册npm账号 然后 执行npm login 登录账号
+
+然后要发布的包的 publishConfig 要和当前 npm源的地址一致
+
+登录之后 执行npm publish 发布包即可
+
+## 具体包的使用 看查看npm包的README.md
