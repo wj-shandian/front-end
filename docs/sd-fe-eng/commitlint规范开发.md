@@ -1,6 +1,8 @@
 
 # 如何拥有自己的定制的commit规范
 
+[commitlint官网](https://commitlint.js.org/#/)
+
 ## 首先在项目 sd-fe-eng 初始化文件
 
 learn create commintlint-config
