@@ -101,9 +101,10 @@
   - [Touchable 影响 ScrollView 滚动问题](ReactNative/Touchable影响ScrollView滚动问题.md "Touchable影响ScrollView滚动问题")
   - [reactNative-flatList 的相关问题](ReactNative/reactNative-flatList的相关问题.md "reactNative-flatList的相关问题")
   - [reactNative 项目禁止 app 横屏设置](ReactNative/reactNative项目禁止app横屏设置.md "reactNative项目禁止app横屏设置")
-- redux
+- 状态管理
   - [redux 从基本使用到源码实现](redux/redux从基本使用到源码实现.md "redux从基本使用到源码实现")
   - [react-redux 的使用以及原理](redux/react-redux的使用以及原理.md "react-redux的使用以及原理")
+  - [zustand](redux/zustand.md "zustand")
 - ReactRouter
 
   - [react-router 基本使用以及路由守卫的实现](ReactRouter/react-router基本使用以及路由守卫的实现.md "react-router基本使用以及路由守卫的实现")
