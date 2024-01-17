@@ -135,12 +135,12 @@
 - rollup
   - [rollup 实战](docs/rollup/rollup实战.md "rollup实战")
 - 前端工程化规范项目
-  - [初始化文档以及action自动化部署](docs/sd-fe-eng/初始化文档以及action自动化部署.md "初始化文档以及action自动化部署")
-  - [markdownlint规范开发](docs/sd-fe-eng/markdownlint规范开发.md "markdownlint规范开发")
-  - [commitlint规范开发](docs/sd-fe-eng/commitlint规范开发.md "commitlint规范开发")
-  - [stylelint规范开发](docs/sd-fe-eng/stylelint规范开发.md "stylelint规范开发")
-  - [eslint规范开发](docs/sd-fe-eng/eslint规范开发.md "eslint规范开发")
-  - [eslintplugin开发](docs/sd-fe-eng/eslintplugin开发.md "eslintplugin开发")
+  - [初始化文档以及 action 自动化部署](docs/sd-fe-eng/初始化文档以及action自动化部署.md "初始化文档以及action自动化部署")
+  - [markdownlint 规范开发](docs/sd-fe-eng/markdownlint规范开发.md "markdownlint规范开发")
+  - [commitlint 规范开发](docs/sd-fe-eng/commitlint规范开发.md "commitlint规范开发")
+  - [stylelint 规范开发](docs/sd-fe-eng/stylelint规范开发.md "stylelint规范开发")
+  - [eslint 规范开发](docs/sd-fe-eng/eslint规范开发.md "eslint规范开发")
+  - [eslintplugin 开发](docs/sd-fe-eng/eslintplugin开发.md "eslintplugin开发")
 - 技术杂文
   - [关于微前端的理解与实战](docs/tech-essays/关于微前端的理解与实战.md "关于微前端的理解与实战")
   - [node 如何调用 c++库](docs/tech-essays/node如何调用c++库.md "node如何调用c++库")
@@ -158,6 +158,7 @@
   - [小程序遇到的问题](docs/tech-essays/小程序遇到的问题.md "小程序遇到的问题")
   - [vite+react 项目初始化过程](docs/tech-essays/vite+react项目初始化过程.md "vite+react项目初始化过程")
   - [npm 打补丁](docs/tech-essays/npm打补丁.md "npm打补丁")
+  - [加速访问 github 的 host 配置](docs/tech-essays/加速访问github的host配置.md "加速访问github的host配置")
 - 翻译文章
   - [说明](docs/translation/说明.md "说明")
   - [如何使用 useMemo 和 useCallback 你可以删除大部分](docs/translation/如何使用useMemo和useCallback你可以删除大部分.md "如何使用useMemo和useCallback你可以删除大部分")
