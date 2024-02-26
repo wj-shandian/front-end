@@ -83,3 +83,5 @@ export default defineConfig({
 ```
 
 至此 dumi 接入完 可以运行查看 基本的样式
+
+接下来我们来实现项目的打包功能 请看下一小节
