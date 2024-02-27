@@ -141,6 +141,12 @@
   - [stylelint 规范开发](docs/sd-fe-eng/stylelint规范开发.md "stylelint规范开发")
   - [eslint 规范开发](docs/sd-fe-eng/eslint规范开发.md "eslint规范开发")
   - [eslintplugin 开发](docs/sd-fe-eng/eslintplugin开发.md "eslintplugin开发")
+- sdHooks 库
+  - [hooks 库初始化](docs/hooks/hooks库初始化.md "hooks库初始化")
+  - [打包](docs/hooks/打包.md "打包")
+  - [useToggle](docs/hooks/useToggle.md "useToggle")
+  - [单元测试](docs/hooks/单元测试.md "单元测试")
+  - [自动化部署文档以及发布 npm 以及发布 CDN](docs/hooks/自动化部署文档以及发布npm以及发布CDN.md "自动化部署文档以及发布npm以及发布CDN")
 - 技术杂文
   - [关于微前端的理解与实战](docs/tech-essays/关于微前端的理解与实战.md "关于微前端的理解与实战")
   - [node 如何调用 c++库](docs/tech-essays/node如何调用c++库.md "node如何调用c++库")
