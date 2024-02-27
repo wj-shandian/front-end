@@ -141,6 +141,7 @@
   - [stylelint 规范开发](docs/sd-fe-eng/stylelint规范开发.md "stylelint规范开发")
   - [eslint 规范开发](docs/sd-fe-eng/eslint规范开发.md "eslint规范开发")
   - [eslintplugin 开发](docs/sd-fe-eng/eslintplugin开发.md "eslintplugin开发")
+  - [脚手架开发](docs/sd-fe-eng/脚手架开发.md "脚手架开发")
 - sdHooks 库
   - [hooks 库初始化](docs/hooks/hooks库初始化.md "hooks库初始化")
   - [打包](docs/hooks/打包.md "打包")
