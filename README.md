@@ -148,6 +148,9 @@
   - [useToggle](docs/hooks/useToggle.md "useToggle")
   - [单元测试](docs/hooks/单元测试.md "单元测试")
   - [自动化部署文档以及发布 npm 以及发布 CDN](docs/hooks/自动化部署文档以及发布npm以及发布CDN.md "自动化部署文档以及发布npm以及发布CDN")
+  - [useLatest](docs/hooks/useLatest.md "useLatest")
+  - [useUnmount](docs/hooks/useUnmount.md "useUnmount")
+  - [useTitle](docs/hooks/useTitle.md "useTitle")
 - 技术杂文
   - [关于微前端的理解与实战](docs/tech-essays/关于微前端的理解与实战.md "关于微前端的理解与实战")
   - [node 如何调用 c++库](docs/tech-essays/node如何调用c++库.md "node如何调用c++库")

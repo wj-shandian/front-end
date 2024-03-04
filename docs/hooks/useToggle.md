@@ -2,7 +2,7 @@
 
 ## 新建
 
-在 hooks 目录下新建 src 在 src 目录下新建 useToggle.ts 和 index.md 以及 单元测试的目录 `__tests__` 和 文档所需要的 demo 目录
+在 hooks 目录下新建 src 在 src 目录下新建 useToggle 文件夹 在该文件夹下 新建 index.ts 和 index.md 以及 单元测试的目录 `__tests__` 和 文档所需要的 demo 目录
 
 ## index.ts
 
@@ -64,49 +64,54 @@ export default useToggle;
 
 ## index.md
 
-```
----
-title: useToggle
-nav: hooks
----
+[直接查看](https://wj-shandian.github.io/sd-hooks/#/hooks/use-toggle)
 
-# useToggle
+## 单元测试
 
-用于在两个状态值之间的切换
+```js
+import { renderHook, act } from "@testing-library/react";
+import useToggle from "../index";
 
-## 代码演示
+//  renderHook 渲染 hook act 模拟用户点击
 
-### 基本用法
+describe("useToggle", () => {
+  it("test on init", async () => {
+    const hooks = renderHook(() => useToggle());
+    expect(hooks.result.current[0]).toBe(false);
+  });
+  it("test on methods", async () => {
+    const hook = renderHook(() => useToggle("Hello"));
+    expect(hook.result.current[0]).toBe("Hello");
+    act(() => {
+      hook.result.current[1].toggle();
+    });
+    expect(hook.result.current[0]).toBeFalsy();
+    act(() => {
+      hook.result.current[1].setLeft();
+    });
+    expect(hook.result.current[0]).toBe("Hello");
+    act(() => {
+      hook.result.current[1].setRight();
+    });
+    expect(hook.result.current[0]).toBeFalsy();
+  });
 
-<code src="./demo/demo1.tsx"></code>
-
-### 高级用法
-
-<code src="./demo/demo2.tsx"></code>
-
-## 参数
-
-| 参数         | 说明 | 类型 | 默认值 |
-| ------------ | ---- | ---- | ------ |
-| defaultValue | 可选 | T    | false  |
-| reverseValue | 可选 | U    | 无     |
-
-## result
-
-| 参数   | 说明     | 类型    |
-| ------ | -------- | ------- |
-| state  | 状态值   | -       |
-| action | 操作集合 | Actions |
-
-## Actions
-
-| 参数     | 说明                                                                      | 类型                 |
-| -------- | ------------------------------------------------------------------------- | -------------------- |
-| toggle   | 切换 state                                                                | ()=>void             |
-| set      | 修改 state                                                                | (state:T ｜ U)=>void |
-| setLeft  | 设置值为默认值                                                            | ()=>void             |
-| setRight | 如果传入了 reverseValue, 则设置为 reverseValue。 否则设置为 默认值 的反值 | ()=>void             |
-
+  it("test on optional", () => {
+    const hook = renderHook(() => useToggle("Hello", "World"));
+    act(() => {
+      hook.result.current[1].toggle();
+    });
+    expect(hook.result.current[0]).toBe("World");
+    act(() => {
+      hook.result.current[1].set("World");
+    });
+    expect(hook.result.current[0]).toBe("World");
+    act(() => {
+      hook.result.current[1].toggle();
+    });
+    expect(hook.result.current[0]).toBe("Hello");
+  });
+});
 ```
 
 然后引入单元测试来进一步完善 hooks 的正确性
