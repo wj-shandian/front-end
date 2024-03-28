@@ -118,3 +118,62 @@ class App extends React.Component {
 ```
 
 更多技巧参考官网
+
+## Context 的缺点
+
+Context 本质上是一个很大的对象，只要数据变更 以下所有的内容有可能都会重新渲染
+
+怎么解决呢
+
+1. 细化拆分 Context
+2. 通过定义 xxxProvider 将数据更新局限在 children 层 不再是 PageContext.Provider
+   简单的说就是重新封装 Provider + props.children
+
+代码示例
+
+```js
+/** 主题 */
+const ThemeContext = React.createContext({ theme: "red" });
+const ThemeProvider = (props) => {
+  const [theme, setTheme] = useState({ theme: "red" });
+  console.log("ThemeProvider-----", theme.theme);
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {props.children}
+    </ThemeContext.Provider>
+  );
+};
+
+const Son1 = function (props) {
+  const { setTheme } = useContext(ThemeContext);
+  return <button onClick={() => setTheme({ theme: "blue" })}>改变主题</button>;
+};
+
+const Son2 = function (props) {
+  const { theme } = useContext(ThemeContext);
+  console.log("Son2----", theme.theme);
+  return <div>主题----{theme.theme}</div>;
+};
+
+const Son4 = function (props) {
+  console.log("Son4---没有使用上下文");
+  return <div>没有使用上下文</div>;
+};
+
+export default class ContextChildren extends React.Component {
+  render() {
+    return (
+      <ThemeProvider>
+        <Son1 />
+        <Son2 />
+        <Son4 />
+      </ThemeProvider>
+    );
+  }
+}
+
+```
+
+为什么这样就 Son4 就不会重新渲染了，主要是 props.children
+
+props.children指向一个对象,这个对象中存放着<Son1 />、<Son2 />、<Son4 />执行的结果，ThemeProvider执行的时候，props.children指向的对象没有发生变化，只有当ContextChildren组件重新渲染的时候，<Son1 />、<Son2 />、<Son4 />才会重新执行，由于我们将状态放置于ThemeProvider组件中，所以ContextChildren组件不会重新渲染，<Son1 />、<Son2 />、<Son4 />也就不会重新执行，所以Son4---没有使用上下文没有打印。
