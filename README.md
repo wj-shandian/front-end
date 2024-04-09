@@ -55,6 +55,7 @@
   - [diff 算法](docs/vue/diff算法.md "diff算法")
   - [keep-alive 实现原理](docs/vue/keep-alive实现原理.md "keep-alive实现原理")
   - [vue 长列表渲染](docs/vue/vue长列表渲染.md "vue长列表渲染")
+  - [vue 长列表数据渲染的终极方案](docs/vue/vue长列表数据渲染的终极方案.md "vue长列表数据渲染的终极方案")
 - Vue 面试相关
   - [vue 生命周期的理解](docs/vue-interview/vue生命周期的理解.md "vue生命周期的理解")
   - [vue 父子组件生命周期的调用顺序](docs/vue-interview/vue父子组件生命周期的调用顺序.md "vue父子组件生命周期的调用顺序")

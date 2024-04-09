@@ -42,6 +42,7 @@
   - [css 画三角形](css/css画三角形.md "css画三角形")
   - [缩放字体小于 12px](css/缩放字体小于12px.md "缩放字体小于12px")
 - Vue
+
   - [mvvm](vue/mvvm.md "mvvm")
   - [vue 响应式原理](vue/vue响应式原理.md "vue响应式原理")
   - [router 实现原理](vue/router实现原理.md "router实现原理")
@@ -50,6 +51,8 @@
   - [diff 算法](vue/diff算法.md "diff算法")
   - [keep-alive 实现原理](vue/keep-alive实现原理.md "keep-alive实现原理")
   - [vue 长列表渲染](vue/vue长列表渲染.md "vue长列表渲染")
+  - [vue 长列表数据渲染的终极方案](vue/vue长列表数据渲染的终极方案.md "vue长列表数据渲染的终极方案")
+
 - Vue 面试相关
   - [vue 生命周期的理解](vue-interview/vue生命周期的理解.md "vue生命周期的理解")
   - [vue 父子组件生命周期的调用顺序](vue-interview/vue父子组件生命周期的调用顺序.md "vue父子组件生命周期的调用顺序")
