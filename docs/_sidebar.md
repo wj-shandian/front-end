@@ -210,6 +210,7 @@
   - [git 删除 commit 相关操作](Git/git删除commit相关操作.md "git删除commit相关操作")
   - [git 合并 commit](Git/git合并commit.md "git合并commit")
   - [git-reset](Git/git-reset.md "git-reset")
+  - [rebase 和 merge 的区别](Git/rebase和merge的区别.md "rebase和merge的区别")
 - 设计模式
   - [单例模式](designMode/单例模式.md "单例模式")
   - [发布订阅模式](designMode/发布订阅模式.md "发布订阅模式")
