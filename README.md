@@ -210,6 +210,9 @@
   - [git 合并 commit](docs/Git/git合并commit.md "git合并commit")
   - [git-reset](docs/Git/git-reset.md "git-reset")
   - [rebase 和 merge 的区别](docs/Git/rebase和merge的区别.md "rebase和merge的区别")
+  - [reset 和 revert 的区别](docs/Git/reset和revert的区别.md "reset和revert的区别")
+  - [stash 的理解以及应用场景](docs/Git/stash的理解以及应用场景.md "stash的理解以及应用场景")
+  - [fetch 和 pull 的区别](docs/Git/fetch和pull的区别.md "fetch和pull的区别")
 - 设计模式
   - [单例模式](docs/designMode/单例模式.md "单例模式")
   - [发布订阅模式](docs/designMode/发布订阅模式.md "发布订阅模式")
