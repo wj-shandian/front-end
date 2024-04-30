@@ -30,6 +30,7 @@
   - [模块化发展历程](js/模块化发展历程.md "模块化发展历程")
   - [严格模式下的特点](js/严格模式下的特点.md "严格模式下的特点")
   - [前端攻击手段](js/前端攻击手段.md "前端攻击手段")
+  - [装饰器](js/装饰器.md "装饰器")
 - CSS
   - [BFC](css/BFC.md "BFC")
   - [flex](css/flex.md "flex")
@@ -171,6 +172,7 @@
   - [vite+react 项目初始化过程](tech-essays/vite+react项目初始化过程.md "vite+react项目初始化过程")
   - [npm 打补丁](tech-essays/npm打补丁.md "npm打补丁")
   - [加速访问 github 的 host 配置](tech-essays/加速访问github的host配置.md "加速访问github的host配置")
+  - [react-web 打印](tech-essays/react-web打印.md "react-web打印")
 - 翻译文章
   - [说明](translation/说明.md "说明")
   - [如何使用 useMemo 和 useCallback 你可以删除大部分](translation/如何使用useMemo和useCallback你可以删除大部分.md "如何使用useMemo和useCallback你可以删除大部分")
