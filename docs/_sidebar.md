@@ -93,6 +93,7 @@
   - [react-ref](React/react-ref.md "react-ref")
   - [react 渲染优化](React/react渲染优化.md "react渲染优化")
   - [react-hoc](React/react-hoc.md "react-hoc")
+  - [react 事物机制](React/react事物机制.md "react事物机制")
   - [reactHook 理解文字篇](React/reactHook理解文字篇.md "reactHook理解文字篇")
   - [reactDiff 和 vueDiff 区别](React/reactDiff和vueDiff区别.md "reactDiff和vueDiff区别")
   - [react 重要的 changeLog](React/react重要的changeLog.md "react重要的changeLog")
@@ -155,6 +156,7 @@
   - [useUnmount](hooks/useUnmount.md "useUnmount")
   - [useTitle](hooks/useTitle.md "useTitle")
 - 技术杂文
+
   - [关于微前端的理解与实战](tech-essays/关于微前端的理解与实战.md "关于微前端的理解与实战")
   - [node 如何调用 c++库](tech-essays/node如何调用c++库.md "node如何调用c++库")
   - [electron 调用 node 文件的问题](tech-essays/electron调用node文件的问题.md "electron调用node文件的问题")
@@ -173,6 +175,8 @@
   - [npm 打补丁](tech-essays/npm打补丁.md "npm打补丁")
   - [加速访问 github 的 host 配置](tech-essays/加速访问github的host配置.md "加速访问github的host配置")
   - [react-web 打印](tech-essays/react-web打印.md "react-web打印")
+  - [认识 pnpm](tech-essays/认识pnpm.md "认识 pnpm")
+
 - 翻译文章
   - [说明](translation/说明.md "说明")
   - [如何使用 useMemo 和 useCallback 你可以删除大部分](translation/如何使用useMemo和useCallback你可以删除大部分.md "如何使用useMemo和useCallback你可以删除大部分")

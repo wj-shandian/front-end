@@ -96,6 +96,7 @@
   - [react-ref](docs/React/react-ref.md "react-ref")
   - [react 渲染优化](docs/React/react渲染优化.md "react渲染优化")
   - [react-hoc](docs/React/react-hoc.md "react-hoc")
+  - [react 事物机制](docs/React/react事物机制.md "react事物机制")
   - [reactHook 理解文字篇](docs/React/reactHook理解文字篇.md "reactHook理解文字篇")
   - [reactDiff 和 vueDiff 区别](docs/React/reactDiff和vueDiff区别.md "reactDiff和vueDiff区别")
   - [react 重要的 changeLog](docs/React/react重要的changeLog.md "react重要的changeLog")
@@ -174,6 +175,7 @@
   - [npm 打补丁](docs/tech-essays/npm打补丁.md "npm打补丁")
   - [加速访问 github 的 host 配置](docs/tech-essays/加速访问github的host配置.md "加速访问github的host配置")
   - [react-web 打印](docs/tech-essays/react-web打印.md "react-web打印")
+  - [认识 pnpm](docs/tech-essays/认识pnpm.md "认识 pnpm")
 - 翻译文章
   - [说明](docs/translation/说明.md "说明")
   - [如何使用 useMemo 和 useCallback 你可以删除大部分](docs/translation/如何使用useMemo和useCallback你可以删除大部分.md "如何使用useMemo和useCallback你可以删除大部分")
