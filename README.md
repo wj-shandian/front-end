@@ -112,6 +112,7 @@
   - [Touchable 影响 ScrollView 滚动问题](docs/ReactNative/Touchable影响ScrollView滚动问题.md "Touchable影响ScrollView滚动问题")
   - [reactNative-flatList 的相关问题](docs/ReactNative/reactNative-flatList的相关问题.md "reactNative-flatList的相关问题")
   - [reactNative 项目禁止 app 横屏设置](docs/ReactNative/reactNative项目禁止app横屏设置.md "reactNative项目禁止app横屏设置")
+  - [reactNative 的 icon 解决方案](ReactNative/reactNative的icon解决方案.md "reactNative的icon解决方案")
 - 状态管理
   - [redux 从基本使用到源码实现](docs/redux/redux从基本使用到源码实现.md "redux从基本使用到源码实现")
   - [react-redux 的使用以及原理](docs/redux/react-redux的使用以及原理.md "react-redux的使用以及原理")
