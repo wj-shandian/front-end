@@ -115,7 +115,8 @@
   - [reactNative 的 icon 解决方案](docs/ReactNative/reactNative的icon解决方案.md "reactNative的icon解决方案")
   - [reactNative 的一些优化](docs/ReactNative/reactNative的一些优化.md "reactNative的一些优化")
   - [reactNative 项目二开文件路径解析](docsReactNative/reactNative项目二开文件路径解析.md "reactNative项目二开文件路径解析")
-    - [reactNative 一些调试方案](docs/ReactNative/reactNative一些调试方案.md "reactNative一些调试方案")
+  - [reactNative 一些调试方案](docs/ReactNative/reactNative一些调试方案.md "reactNative一些调试方案")
+  - [ios 的 udid 说明](docs/ReactNative/ios的udid说明.md "ios的udid说明")
 - 状态管理
   - [redux 从基本使用到源码实现](docs/redux/redux从基本使用到源码实现.md "redux从基本使用到源码实现")
   - [react-redux 的使用以及原理](docs/redux/react-redux的使用以及原理.md "react-redux的使用以及原理")
