@@ -101,6 +101,7 @@
   - [react 面试题目总结](React/react面试题目总结.md "react面试题目总结")
 
 - ReactNative
+
   - [reactNative 原理](ReactNative/reactNative原理.md "reactNative原理")
   - [hybrid 双端通信](ReactNative/hybrid双端通信.md "hybrid双端通信")
   - [reactNative 启动失败可能的问题](ReactNative/reactNative启动失败可能的问题.md "reactNative启动失败可能的问题")
@@ -114,6 +115,8 @@
   - [reactNative 项目二开文件路径解析](ReactNative/reactNative项目二开文件路径解析.md "reactNative项目二开文件路径解析")
   - [reactNative 一些调试方案](ReactNative/reactNative一些调试方案.md "reactNative一些调试方案")
   - [ios 的 udid 说明](ReactNative/ios的udid说明.md "ios的udid说明")
+  - [react-navigation 路由的基本配置方案](ReactNative/react-navigation路由的基本配置方案.md "react-navigation路由的基本配置方案")
+
 - 状态管理
   - [redux 从基本使用到源码实现](redux/redux从基本使用到源码实现.md "redux从基本使用到源码实现")
   - [react-redux 的使用以及原理](redux/react-redux的使用以及原理.md "react-redux的使用以及原理")
