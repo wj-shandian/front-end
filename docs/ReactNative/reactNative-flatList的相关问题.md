@@ -18,3 +18,37 @@
   onEndReachedThreshold={0.2}
 />
 ```
+
+## 在 Modal 中使用 FlatList 无法滑动
+
+使用 TouchableWithoutFeedback 包裹 FlatList 的 renderItem
+
+如果行之间有间隔 那么 ItemSeparatorComponent 也需要 TouchableWithoutFeedback 包裹
+
+示例
+
+```js
+<FlatList
+  style={{ flex: 1, height: "100%" }}
+  initialNumToRender={20}
+  data={result?.data}
+  onEndReachedThreshold={0.2}
+  onEndReached={loadMore}
+  ListFooterComponent={renderFooter}
+  keyExtractor={(item, index) => `OM-${item.id}-${index}`}
+  ItemSeparatorComponent={() => (
+    <TouchableWithoutFeedback>
+      <View style={{ height: 12 }} />
+    </TouchableWithoutFeedback>
+  )}
+  renderItem={({ item }) => {
+    return (
+      <TouchableWithoutFeedback>
+        <View style={goodStyles.newGood}>
+          <Text>测试</Text>
+        </View>
+      </TouchableWithoutFeedback>
+    );
+  }}
+/>
+```
