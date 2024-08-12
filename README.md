@@ -120,6 +120,7 @@
   - [react-navigation 路由的基本配置方案](docs/ReactNative/react-navigation路由的基本配置方案.md "react-navigation路由的基本配置方案")
   - [react-native 下载文件解决方案](docs/ReactNative/react-native下载文件解决方案.md "react-native下载文件解决方案")
   - [react-native-hooks](docs/ReactNative/react-native-hooks.md "react-native-hooks")
+    - [react-native 的 logo 以及启动图配置](docs/ReactNative/react-native的logo以及启动图配置.md "react-native的logo以及启动图配置")
 - 状态管理
   - [redux 从基本使用到源码实现](docs/redux/redux从基本使用到源码实现.md "redux从基本使用到源码实现")
   - [react-redux 的使用以及原理](docs/redux/react-redux的使用以及原理.md "react-redux的使用以及原理")

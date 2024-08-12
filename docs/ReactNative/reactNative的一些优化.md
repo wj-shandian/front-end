@@ -72,3 +72,11 @@ background 样式也会提示变红。
 ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/114906/1573695266495-79263e05-6012-4506-82b6-dfb55fa14230.png#align=left&display=inline&height=579&name=image.png&originHeight=1396&originWidth=784&size=516196&status=done&width=325)
 
 超过 baseline 就已经出现卡顿的现象了，柱状条越高，卡顿越明显
+
+## header 背景无故丢失
+
+检查当前页面或者上级页面是否在样式里面使用了 overflow: hidden
+
+## iOS 端 TextInput 组件无法通过长按唤起复制、粘贴等操作
+
+检查 rn-debug 是否使用的是最新版本
