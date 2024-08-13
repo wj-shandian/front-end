@@ -147,6 +147,8 @@
   - [webpack 部分面试题总结](docs/webpack/webpack部分面试题总结.md "webpack部分面试题总结")
 - AST
   - [AST 浅析](docs/ast/抽象语法树.md "AST浅析")
+  - [ast 的一些节点认识](docs/ast/ast的一些节点认识.md "ast的一些节点认识")
+  - [babel 一些 api](docs/ast/babel一些api.md "babel一些api")
 - rollup
   - [rollup 实战](docs/rollup/rollup实战.md "rollup实战")
 - 前端工程化规范项目
