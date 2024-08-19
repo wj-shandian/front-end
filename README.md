@@ -150,6 +150,8 @@
   - [ast 的一些节点认识](docs/ast/ast的一些节点认识.md "ast的一些节点认识")
   - [babel 一些 api](docs/ast/babel一些api.md "babel一些api")
   - [写一个简单的 babel 转换](docs/ast/写一个简单的babel转换.md "写一个简单的babel转换")
+  - [babel的plugin和preset认识](docs/ast/babel的plugin和preset认识.md "babel的plugin和preset认识")
+  - [自动埋点的实现](docs/ast/自动埋点的实现.md "自动埋点的实现")
 - rollup
   - [rollup 实战](docs/rollup/rollup实战.md "rollup实战")
 - 前端工程化规范项目
