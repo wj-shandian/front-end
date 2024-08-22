@@ -119,6 +119,8 @@
   - [react-native 下载文件解决方案](ReactNative/react-native下载文件解决方案.md "react-native下载文件解决方案")
   - [react-native-hooks](ReactNative/react-native-hooks.md "react-native-hooks")
   - [react-native 的 logo 以及启动图配置](ReactNative/react-native的logo以及启动图配置.md "react-native的logo以及启动图配置")
+  - [ios 上架流程注意事项](ReactNative/ios上架流程注意事项.md "ios上架流程注意事项")
+  - [react-native 之主题环境变量解决方案](ReactNative/react-native之主题环境变量解决方案.md "react-native之主题环境变量解决方案")
 
 - 状态管理
   - [redux 从基本使用到源码实现](redux/redux从基本使用到源码实现.md "redux从基本使用到源码实现")
@@ -151,8 +153,9 @@
   - [ast 的一些节点认识](ast/ast的一些节点认识.md "ast的一些节点认识")
   - [babel 一些 api](ast/babel一些api.md "babel一些api")
   - [写一个简单的 babel 转换](ast/写一个简单的babel转换.md "写一个简单的babel转换")
-  - [babel的plugin和preset认识](ast/babel的plugin和preset认识.md "babel的plugin和preset认识")
+  - [babel 的 plugin 和 preset 认识](ast/babel的plugin和preset认识.md "babel的plugin和preset认识")
   - [自动埋点的实现](ast/自动埋点的实现.md "自动埋点的实现")
+  - [实战之 RN 单位 rem 的转化](ast/实战之RN单位rem的转化.md "实战之RN单位rem的转化")
 - rollup
   - [rollup 实战](rollup/rollup实战.md "rollup实战")
 - 前端工程化规范项目
