@@ -121,6 +121,7 @@
   - [react-native 的 logo 以及启动图配置](ReactNative/react-native的logo以及启动图配置.md "react-native的logo以及启动图配置")
   - [ios 上架流程注意事项](ReactNative/ios上架流程注意事项.md "ios上架流程注意事项")
   - [react-native 之主题环境变量解决方案](ReactNative/react-native之主题环境变量解决方案.md "react-native之主题环境变量解决方案")
+  - [reactNative 自定义字体](ReactNative/reactNative自定义字体.md "reactNative自定义字体")
 
 - 状态管理
   - [redux 从基本使用到源码实现](redux/redux从基本使用到源码实现.md "redux从基本使用到源码实现")
