@@ -77,10 +77,12 @@ html {
 ## babel 插件
 
 ```js
+const styleNames = ["style", "tabTextStyle", "tabTextActiveStyle"];
 module.exports = function ({ types: t }) {
   return {
     name: "add-font-family", // not required
     visitor: {
+      // 主要针对 createStyle 函数的样式
       CallExpression(path, state) {
         const calleeNode = path.get("callee");
         let satisfied = calleeNode.isIdentifier({ name: "createStyle" });
@@ -106,7 +108,7 @@ module.exports = function ({ types: t }) {
                   value.properties.push(
                     t.objectProperty(
                       t.identifier("fontFamily"),
-                      t.stringLiteral("FZZDXJW--GB1-0")
+                      t.stringLiteral("HYg2gj")
                     )
                   );
                 }
@@ -114,6 +116,32 @@ module.exports = function ({ types: t }) {
             },
           });
         }
+      },
+      // 主要针对行内标签样式适配
+      JSXOpeningElement(path) {
+        // 过滤所有的 View 标签
+        if (path?.node?.name?.name === "View") return;
+        path?.node?.attributes?.forEach((attribute) => {
+          if (
+            t.isJSXAttribute(attribute) &&
+            styleNames.includes(attribute?.name?.name)
+          ) {
+            if (t.isObjectExpression(attribute?.value?.expression)) {
+              const fontFamilyProp = t.objectProperty(
+                t.identifier("fontFamily"),
+                t.stringLiteral("HYg2gj")
+              );
+              const hasFontFamily =
+                attribute?.value?.expression?.properties?.some((property) => {
+                  const { key } = property;
+                  return t.isIdentifier(key, { name: "fontFamily" });
+                });
+              if (!hasFontFamily) {
+                attribute?.value?.expression?.properties?.push(fontFamilyProp);
+              }
+            }
+          }
+        });
       },
     },
   };
@@ -142,3 +170,34 @@ module.exports = (api) => {
 ```
 
 然后打包测试是否生效即可
+
+## 发现一种简单的全局引入方式 不需要使用 babel 插件
+
+```js
+import { StyleSheet, Text, TextInput, Platform } from "react-native";
+
+const defaultFontFamily = {
+  ...Platform.select({
+    android: { fontFamily: "HYg2gj" },
+    ios: { fontFamily: "HYg2gj" },
+  }),
+};
+
+const __render = Text.render;
+
+Text.render = function (props, ref) {
+  const { style, ..._props } = props;
+  const _style = StyleSheet.flatten(style) || {};
+  return __render.call(
+    this,
+    { ..._props, style: { ...defaultFontFamily, ..._style } },
+    ref
+  );
+};
+
+TextInput.defaultProps = { ...TextInput.defaultProps, allowFontScaling: false };
+
+Text.defaultProps = { ...Text.defaultProps, allowFontScaling: false };
+```
+
+然后在 app 入口出引入即可生效
