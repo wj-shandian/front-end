@@ -161,4 +161,70 @@ export default function () {
 }
 ```
 
-。。。。未完 待更新
+## 浅比较
+
+浅比较再react中用 得非常频繁，比如 props 和 state 的对比，新旧 fiber 对比的对比，浅比较就是只比较一层，如果一层比较不出来，那么就会继续比较下去，直到比较出来为止。
+memo useMemo useCallback shouldComponentUpdate 都会用到浅比较。
+
+分析一下react中的浅比较 是如何比较的，直接看源码实现
+
+```js
+/**
+ * is()方法对两个函数参数进行比较，这个借助于===实现的is()内部方法实际上是Object.is()的polyfill。那为啥不直接使用===呢？
+ * Object.is()和===虽然基本相同，但是有两个例外：
+
+Object.is将+0和-0当作不相等，而===把他们当作相等
+Object.is把 Number.NaN和Number.NaN当作相等，而===把他们当作不相等
+
+所以，的is方法就是对+0,-0,Number.NaN进行了特殊处理。
+
+ */
+function is(x: mixed, y: mixed): boolean {
+    // SameValue algorithm
+    if (x === y) { // Steps 1-5, 7-10
+        // Steps 6.b-6.e: +0 != -0
+        // Added the nonzero y check to make Flow happy, but it is redundant
+        return x !== 0 || y !== 0 || 1 / x === 1 / y;
+    } else {
+        // Step 6.a: NaN == NaN
+        return x !== x && y !== y;
+    }
+}
+
+```
+
+```js
+function shallowEqual(objA: mixed, objB: mixed): boolean {
+    //----第1部分----
+    if (is(objA, objB)) {
+      return true;
+    }
+    
+    //----第2部分---- 判断是否是对象
+    if (typeof objA !== 'object' || objA === null ||
+        typeof objB !== 'object' || objB === null) {
+      return false;
+    }
+  
+    //----第3部分---- 判断对象的长度 如果长度不相等 返回false
+    const keysA = Object.keys(objA);
+    const keysB = Object.keys(objB);
+  
+    if (keysA.length !== keysB.length) {
+      return false;
+    }
+  
+    //----第4部分---- 循环遍历keysA 判断key是否在objB中，并且对应的值是否相等
+    for (let i = 0; i < keysA.length; i++) {
+      if (
+        !hasOwnProperty.call(objB, keysA[i]) ||
+        !is(objA[keysA[i]], objB[keysA[i]])
+      ) {
+        return false;
+      }
+    }
+  
+    return true;
+  }
+  
+```
